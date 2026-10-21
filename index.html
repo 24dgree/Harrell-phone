@@ -155,30 +155,30 @@ function openChat(who){const name=who==='shan'?'Shannika 🌻':who==='brian'?'Br
 const noteData={wedding:['Wedding Plans','December. London. Keep it intimate. Ask Dad about the church. Confirm the flowers.'],shan:['Things I Should Tell Shan','I don’t always know how to say what I mean. That doesn’t mean I feel any less. She deserves to hear it from me, not find it in a note.'],gift:['Her Birthday','Flowers. Something thoughtful. No last-minute decisions. Remember what she said about yellow.'],private:['Read When She’s Not Looking','Sometimes I still think about how close we came to losing each other. I don’t want us to become two people who know everything about each other except how to stay.']};
 function openNote(id){const n=noteData[id];appShell('Notes',`<article class="note"><h3 style="font-size:19px;margin:0 0 12px">${n[0]}</h3>${n[1]}</article>`,'notes')}
 function openPhoto(id){const labels={sunflower:'The first sunflower',paris:'Paris, after the rain',venice:'Venice · day 100',london:'London, lately',dinner:'A night worth remembering',sleep:'Shan asleep on my shoulder'};appShell('Photo',`<div style="min-height:300px;border-radius:15px;background:linear-gradient(145deg,#d7c5a6,#627b83);display:grid;place-items:center;text-align:center;padding:20px;font-size:22px">♡<br><span style="font-size:14px">${labels[id]||'A memory'}</span></div><p class="tiny">A fictional photo placeholder. Replace with your own image in the HTML.</p>`,'photos')}
-document.getElementById('unlock').addEventListener('click',home);
+document.getElementById('unlock').addEventListener('click', home);
+
 let startY = null;
 let startX = null;
 
 screen.addEventListener('touchstart', function (e) {
-startY = e.touches[0].clientY;
-startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+  startX = e.touches[0].clientX;
 }, { passive: true });
 
 screen.addEventListener('touchend', function (e) {
-if (startY === null || startX === null) return;
+  if (startY === null || startX === null) return;
 
-const distanceY = e.changedTouches[0].clientY - startY;
-const distanceX = Math.abs(e.changedTouches[0].clientX - startX);
+  const distanceY = e.changedTouches[0].clientY - startY;
+  const distanceX = Math.abs(e.changedTouches[0].clientX - startX);
 
-if (Math.abs(distanceY) > 60 && Math.abs(distanceY) > distanceX) {
-if (distanceY < 0 && view.querySelector('.lock')) {
-home();
-}
+  if (Math.abs(distanceY) > 60 && Math.abs(distanceY) > distanceX) {
+    if (distanceY < 0 && view.querySelector('.lock')) {
+      home();
+    }
+  }
 
-startY = null;
-startX = null;
-}, { passive: true });
-startY = null;
+  startY = null;
+  startX = null;
 }, { passive: true });
 </script>
 <style>
