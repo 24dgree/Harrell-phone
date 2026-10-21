@@ -125,5 +125,34 @@ left: 50%;
 transform: translateX(-50%);
 white-space: nowrap;
 }
-</style></body>
+</style><script>
+(function () {
+  const screen = document.getElementById('screen');
+  const center = document.getElementById('notification-center');
+  const close = document.getElementById('close-notifications');
+
+  if (!screen || !center || !close) return;
+
+  let startY = 0;
+
+  screen.addEventListener('touchstart', function (e) {
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+
+  screen.addEventListener('touchend', function (e) {
+    const endY = e.changedTouches[0].clientY;
+    const distance = endY - startY;
+
+    if (startY < 100 && distance > 70) {
+      center.style.display = 'block';
+    } else if (center.style.display === 'block' && distance < -70) {
+      center.style.display = 'none';
+    }
+  }, { passive: true });
+
+  close.addEventListener('click', function () {
+    center.style.display = 'none';
+  });
+})();
+  </script></body>
 </html>
