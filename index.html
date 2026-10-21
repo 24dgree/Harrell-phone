@@ -57,5 +57,12 @@ function openPhoto(id){const labels={sunflower:'The first sunflower',paris:'Pari
 document.getElementById('unlock').addEventListener('click',home);
 let startY=null;screen.addEventListener('touchstart',e=>{startY=e.touches[0].clientY},{passive:true});screen.addEventListener('touchend',e=>{if(view.querySelector('.lock')&&startY!==null&&startY-e.changedTouches[0].clientY>35)home();startY=null},{passive:true});
 </script>
-</body>
+<style>
+.status-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+}
+</style></body>
 </html>
