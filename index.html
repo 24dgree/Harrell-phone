@@ -59,31 +59,30 @@ flex-shrink: 0;
 <div class="dynamic"></div><div class="status"><span id="status-time">00:00</span><span class="status-icons"><svg viewBox="0 0 18 14" width="18" height="14" fill="currentColor"><path d="M1 13V10L4 7V13H1ZM6 13V6L9 3V13H6ZM11 13V3L14 0V13H11Z"/></svg><svg viewBox="0 0 18 14" width="18" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 4Q9 -2 17 4M4 7Q9 3 14 7M7 10Q9 8 11 10"/><circle cx="9" cy="12" r="1" fill="currentColor" stroke="none"/></svg><svg viewBox="0 0 25 14" width="25" height="14" fill="currentColor"><rect x="1" y="1" width="20" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="3" width="12" height="8" rx="1"/><path d="M22 5V9Q24 9 24 7T22 5Z"/></svg></span></div>
 <div id="view">
 <section class="lock">
-<div class="lockdate">Thursday, October 29</div><div class="clock">00:00</div>
-<div style="font-size:13px;margin-top:8px">Jakarta · 26°C</div><div class="weather">☁</div>
-  <button class="unlock" id="unlock">Swipe up to unlock</button>
-</section>
-<div id="notification-center" style="display:none;position:absolute;top:255px;left:12px;right:12px;z-index:99;background:rgba(25,28,38,.97);color:white;padding:16px;box-sizing:border-box;overflow-y:auto;border-radius:22px;max-height:calc(100% - 330px);">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;">
-    <strong style="font-size:24px;">Notification Center</strong>
-    <button id="close-notifications" style="background:#ffffff25;color:white;border:0;border-radius:50%;width:34px;height:34px;font-size:20px;">×</button>
-  </div>  <div style="font-size:13px;color:#bbb;margin-bottom:14px;">THURSDAY, OCTOBER 29</div>  <div style="background:#ffffff18;border-radius:18px;padding:16px;margin-bottom:12px;">
-    <div style="font-size:12px;color:#ccc;">📅 CALENDAR · NOW</div>
-    <strong style="display:block;margin:7px 0;">Shan Pipi Berat semakin tua</strong>
-    Don't forget her special day.
-  </div>  <div style="background:#ffffff18;border-radius:18px;padding:16px;margin-bottom:12px;">
-    <div style="font-size:12px;color:#ccc;">📝 NOTES · TODAY</div>
-    <strong style="display:block;margin:7px 0;">Shan's Birthday</strong>
-    My favorite person born today ❤️
-  </div>  <div style="background:#ffffff18;border-radius:18px;padding:16px;margin-bottom:12px;">
-    <div style="font-size:12px;color:#ccc;">📞 PHONE · MISSED CALLS</div>
-    <strong style="display:block;margin:7px 0;">Mum ❤️</strong>
-    25 missed calls
-  </div>  <div style="text-align:center;color:#aaa;font-size:12px;margin-top:25px;">Swipe up to close</div>
-</div><div class="bottom-indicator" id="indicator"></div>
+  <div class="lockdate">Thursday, October 29</div>
+  <div class="clock">00:00</div>
+  <div style="font-size:13px;margin-top:8px">Jakarta · 26°C</div>
+  <div class="weather">☁</div>  <div id="lock-notifications" style="margin:18px 14px 0; position:relative; z-index:2; text-align:left;"><div style="background:rgba(245,245,250,.92);color:#222;border-radius:16px;padding:13px;margin-bottom:8px;display:flex;align-items:flex-start;gap:10px;">
+  <div style="font-size:22px;">📅</div>
+  <div style="flex:1;">
+    <div style="font-size:11px;color:#666;margin-bottom:5px;">CALENDAR</div>
+    <div style="font-size:14px;font-weight:600;">My favorite person born today ❤️</div>
+  </div>
+  <div style="font-size:10px;color:#777;">Today</div>
 </div>
-</main>
-<script>
+
+<div style="background:rgba(245,245,250,.92);color:#222;border-radius:16px;padding:13px;display:flex;align-items:center;gap:10px;">
+  <div style="width:36px;height:36px;border-radius:50%;background:#65a879;color:white;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">☎</div>
+  <div style="flex:1;">
+    <div style="font-size:14px;font-weight:600;">Mum ❤️</div>
+    <div style="font-size:12px;color:#555;margin-top:4px;">25 missed calls</div>
+  </div>
+  <div style="font-size:10px;color:#777;">Phone</div>
+</div>
+
+  </div><button class="unlock" id="unlock">Swipe up to unlock</button>
+
+</section>
 const view=document.getElementById('view'), screen=document.getElementById('screen'), indicator=document.getElementById('indicator');
 const appData={
 messages:{title:'Messages',body:`<button class="row" data-chat="shan"><span class="avatar">💛</span><span><b>Shannika 🌻</b><small>Did you eat yet?</small></span></button><button class="row" data-chat="brian"><span class="avatar">B</span><span><b>Brian</b><small>Mate, answer your phone.</small></span></button><button class="row" data-chat="adam"><span class="avatar">A</span><span><b>Adam</b><small>Wedding stuff. Call me.</small></span></button>`},
