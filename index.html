@@ -116,7 +116,52 @@ messages:{title:'Messages',body:`<button class="row" data-chat="shan"><span clas
 photos:{title:'Photos',body:`<div class="tiny" style="margin-bottom:12px">Library · 4,821 Photos</div><div class="photo-grid"><button class="photo" data-photo="sunflower">🌻<br>Shan's favourite</button><button class="photo" data-photo="paris">🥂<br>Paris</button><button class="photo" data-photo="venice">🌊<br>Venice</button><button class="photo" data-app="hidden">🔒<br>Hidden Album</button></div>`},
 notes:{title:'Notes',body:`<button class="row" data-note="wedding"><span>📒</span><span><b>Wedding Plans</b><small>Things to arrange before December.</small></span></button><button class="row" data-note="shan"><span>💛</span><span><b>Things I Should Tell Shan</b><small>A few things I keep putting off.</small></span></button><button class="row" data-note="gift"><span>🎁</span><span><b>Her Birthday</b><small>Flowers, surprises, and everything she deserves.</small></span></button><button class="row" data-note="private"><span>🔒</span><span><b>Read When She's Not Looking</b><small>Definitely not for Shan to find.</small></span></button>`},
 phone:{title:'Recents',body:`<div class="row"><span class="avatar">💛</span><span><b>Shannika</b><small>Outgoing FaceTime · Yesterday</small></span></div><div class="row"><span class="avatar">B</span><span><b>Brian</b><small>Missed call · 08:42</small></span></div><div class="row"><span class="avatar">A</span><span><b>Adam</b><small>Outgoing call · Monday</small></span></div>`},
-instagram:{title:'Instagram',body:`<div style="text-align:center;padding:10px"><div style="font-size:43px">◎</div><b>harrell.knoxx</b><p class="tiny">London · Jakarta</p><p>Hospitality, late nights, and things worth keeping.</p><hr style="border:0;border-top:1px solid #ddd;margin:15px 0"><div class="photo-grid"><button class="photo" data-photo="london">🌆<br>London</button><button class="photo" data-photo="dinner">🥂<br>Somewhere</button></div></div>`},
+instagram:{title:'Instagram',body:`
+<div id="ig" style="font-family:Arial,sans-serif;color:#262626;margin:-5px">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0 14px;border-bottom:1px solid #ddd">
+    <b style="font-size:23px;font-family:Georgia,serif">Instagram</b>
+    <span style="font-size:23px">♡　＋</span>
+  </div>
+
+  <div style="display:flex;gap:13px;overflow-x:auto;padding:14px 0;text-align:center">
+    <div style="min-width:58px"><div style="width:50px;height:50px;border-radius:50%;background:#ddd;display:grid;place-items:center;font-size:25px">＋</div><small>Your story</small></div>
+    <div style="min-width:58px"><button data-story="Paris" style="width:53px;height:53px;border:3px solid #d94c85;border-radius:50%;background:#ead4c3;font-size:23px">🏙️</button><br><small>paris</small></div>
+    <div style="min-width:58px"><button data-story="Shan" style="width:53px;height:53px;border:3px solid #d94c85;border-radius:50%;background:#f5df9c;font-size:23px">🌻</button><br><small>sunny</small></div>
+    <div style="min-width:58px"><button data-story="London" style="width:53px;height:53px;border:3px solid #d94c85;border-radius:50%;background:#c4d2df;font-size:23px">🌆</button><br><small>london</small></div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:9px;padding:8px 0">
+    <div style="width:36px;height:36px;border-radius:50%;background:#b9c6d1;display:grid;place-items:center;font-size:20px">H</div>
+    <div style="flex:1"><b>harrell.knoxx</b><div style="font-size:10px;color:#777">London, United Kingdom</div></div>
+    •••
+  </div>
+
+  <button data-photo="paris" style="display:block;width:100%;height:220px;border:0;padding:0;background:#d8c6b6;overflow:hidden">
+    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=700&q=80" alt="Paris" style="width:100%;height:100%;object-fit:cover">
+  </button>
+
+  <div style="padding:8px 0">
+    <div style="font-size:24px"><button data-like style="border:0;background:none;font-size:24px;padding:0">♡</button>　<span>♧　➤</span></div>
+    <div style="font-size:12px;margin:5px 0"><b><span data-likes>248</span> likes</b></div>
+    <div style="font-size:12px;line-height:1.6"><b>harrell.knoxx</b> Paris looks better when I'm not in a hurry.</div>
+    <div style="font-size:11px;color:#888;margin-top:5px">View all 18 comments</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:12px">
+    <button data-photo="london" style="height:90px;border:0;padding:0;overflow:hidden"><img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=250&q=80" style="width:100%;height:100%;object-fit:cover" alt="London"></button>
+    <button data-photo="flowers" style="height:90px;border:0;padding:0;overflow:hidden"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=250&q=80" style="width:100%;height:100%;object-fit:cover" alt="Flowers"></button>
+    <button data-photo="coffee" style="height:90px;border:0;padding:0;overflow:hidden"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=250&q=80" style="width:100%;height:100%;object-fit:cover" alt="Coffee"></button>
+  </div>
+
+  <div style="border-top:1px solid #ddd;padding-top:12px;margin-top:12px;display:flex;justify-content:space-around;font-size:23px">
+    <button data-igtab="Home" style="border:0;background:none">⌂</button>
+    <button data-igtab="Search" style="border:0;background:none">⌕</button>
+    <button data-igtab="Reels" style="border:0;background:none">▣</button>
+    <button data-igtab="Activity" style="border:0;background:none">♡</button>
+    <button data-igtab="Profile" style="border:0;background:none">◉</button>
+  </div>
+  <div id="ig-message" style="font-size:12px;margin-top:10px"></div>
+</div>`},
 spotify:{title:'Spotify',body:`<div style="text-align:center;padding:17px 4px"><div style="font-size:54px">♫</div><h3 style="font-size:20px;margin:8px 0">for the girl in yellow</h3><p class="tiny">A playlist by Harrell</p><div class="note">♫ Can't Help Falling in Love<br>♫ La Vie En Rose<br>♫ Until I Found You</div><button class="back" id="play">▶ Play preview</button><p class="tiny" id="play-status"></p></div>`},
 calendar:{title:'Calendar',body:`<h3 style="font-size:20px;margin:4px 0 14px">October 2026</h3><div class="note"><b>15 OCT</b><br>Harrell's birthday</div><div class="note"><b>21 OCT</b><br>Nothing scheduled. For once.</div><div class="note"><b>29 OCT</b><br>Shannika's birthday 🎂</div><div class="note"><b>26 DEC</b><br>Our day. ❤️</div>`},
 settings:{title:'Settings',body:`<div class="row">✈️ &nbsp; Airplane Mode</div><div class="row">📶 &nbsp; Wi-Fi · Connected</div><div class="row">🔋 &nbsp; Battery · 100%</div><div class="row">🔒 &nbsp; Face ID & Passcode</div>`},
