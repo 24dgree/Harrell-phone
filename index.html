@@ -169,41 +169,5 @@ left: 50%;
 transform: translateX(-50%);
 white-space: nowrap;
 }
- <script>
-(function () {
-  const screen = document.getElementById('screen');
-  const center = document.getElementById('notification-center');
-  const close = document.getElementById('close-notifications');
-
-  if (!screen || !center || !close) {
-    console.error('Notification Center elements not found');
-    return;
-  }
-
-  let startY = null;
-
-  screen.addEventListener('touchstart', function (e) {
-    startY = e.touches[0].clientY;
-  }, { passive: true });
-
-  screen.addEventListener('touchend', function (e) {
-    if (startY === null) return;
-
-    const endY = e.changedTouches[0].clientY;
-    const distance = endY - startY;
-
-    if (distance > 60) {
-      center.style.display = 'block';
-    } else if (distance < -60 && center.style.display === 'block') {
-      center.style.display = 'none';
-    }
-
-    startY = null;
-  }, { passive: true });
-
-  close.addEventListener('click', function () {
-    center.style.display = 'none';
-  });
-})();
-</script></body>
+</body>
 </html>
