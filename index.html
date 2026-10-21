@@ -51,17 +51,21 @@ border-radius: 22px;
 padding: 10px;
 margin: 0;
 }.dock button{height:45px;width:45px;border:0;border-radius:13px;background:#ffffffdf;font-size:22px}
-.appview{position:absolute;top:0;bottom:0;left:0;right:0;box-sizing:border-box;overflow-y:auto;background:var(--paper);color:#202127;border-radius:0;padding:45px 13px 20px;min-height:0;height:auto;z-index:30}
-position: absolute;
-bottom: 8px;
-left: 50%;
-transform: translateX(-50%);
-height: 5px;
-width: 110px;
-border-radius: 9px;
-background: #ffffffb0;
-margin: 0;
-flex-shrink: 0;
+.appview {
+  position: absolute;
+  top: 55px;
+  bottom: 65px;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background: var(--paper);
+  color: #202127;
+  border-radius: 0;
+  padding: 15px 13px 20px;
+  min-height: 0;
+  height: auto;
+  z-index: 30;
 }
 @media(max-height:700px){.screen{min-height:610px}.lock{padding-top:38px}.appview{min-height:430px}}
 
