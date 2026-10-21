@@ -168,13 +168,17 @@ screen.addEventListener('touchstart', function (e) {
 screen.addEventListener('touchend', function (e) {
   if (startY === null || startX === null) return;
 
-  const distanceY = e.changedTouches[0].clientY - startY;
-  const distanceX = Math.abs(e.changedTouches[0].clientX - startX);
+  const endY = e.changedTouches[0].clientY;
+  const endX = e.changedTouches[0].clientX;
+  const distanceY = endY - startY;
+  const distanceX = Math.abs(endX - startX);
 
-  if (Math.abs(distanceY) > 60 && Math.abs(distanceY) > distanceX) {
-    if (distanceY < 0 && view.querySelector('.lock')) {
-      home();
-    }
+  if (
+    distanceY < -60 &&
+    Math.abs(distanceY) > distanceX &&
+    view.querySelector('.lock')
+  ) {
+    home();
   }
 
   startY = null;
