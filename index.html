@@ -208,12 +208,18 @@ white-space: nowrap;
   screen.addEventListener('touchend', function (e) {
     if (startY === null) return;
 
-    const distance = e.changedTouches[0].clientY - startY;
+    const endY = e.changedTouches[0].clientY;
+    const distance = Math.abs(endY - startY);
 
     if (distance > 60) {
-      center.style.display = 'block';
-    } else if (distance < -60 && center.style.display === 'block') {
       center.style.display = 'none';
+
+      const unlock = document.getElementById('unlock');
+      const view = document.getElementById('view');
+
+      if (unlock && view.querySelector('.lock')) {
+        unlock.click();
+      }
     }
 
     startY = null;
