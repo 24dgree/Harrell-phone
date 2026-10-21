@@ -63,7 +63,7 @@ flex-shrink: 0;
   <div class="clock">00:00</div>
   <div style="font-size:13px;margin-top:8px">Jakarta · 26°C</div>
   <div class="weather">☁</div>  <div id="lock-notifications" style="margin:18px 14px 0; position:relative; z-index:2; text-align:left;"><div style="background:rgba(245,245,250,.92);color:#222;border-radius:16px;padding:13px;margin-bottom:8px;display:flex;align-items:flex-start;gap:10px;">
-  <div style="font-size:22px;">📅</div>
+  <div style="font-size:22px;">🗓️</div>
   <div style="flex:1;">
     <div style="font-size:11px;color:#666;margin-bottom:5px;">CALENDAR</div>
     <div style="font-size:14px;font-weight:600;">My favorite person born today ❤️</div>
@@ -80,9 +80,20 @@ flex-shrink: 0;
   <div style="font-size:10px;color:#777;">Phone</div>
 </div>
 
-  </div><button class="unlock" id="unlock">Swipe up to unlock</button>
+</div><button class="unlock" id="unlock">Swipe up to unlock</button>
 
-</section>
+</section><div id="notification-center" style="display:none;position:absolute;inset:0;z-index:20;background:rgba(235,238,245,.96);color:#222;padding:55px 18px 25px;overflow-y:auto;box-sizing:border-box;">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;">
+    <strong style="font-size:25px;">Notifications</strong>
+    <button id="close-notifications" style="border:0;border-radius:50%;width:32px;height:32px;font-size:20px;background:#ddd;">×</button>
+  </div>  <div style="background:white;border-radius:16px;padding:15px;margin-bottom:10px;">
+    <div style="font-size:11px;color:#777;margin-bottom:6px;">CALENDAR · TODAY</div>
+    <strong>My favorite person born today ❤️</strong>
+  </div>  <div style="background:white;border-radius:16px;padding:15px;">
+    <div style="font-size:11px;color:#777;margin-bottom:6px;">PHONE</div>
+    <strong>Mum ❤️</strong>
+    <div style="font-size:13px;color:#666;margin-top:5px;">25 missed calls</div>
+  </div>
 <script>
 const view=document.getElementById('view'), screen=document.getElementById('screen'), indicator=document.getElementById('indicator');
 const appData={
