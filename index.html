@@ -77,11 +77,16 @@ flex-shrink: 0;
   box-sizing: border-box !important;
   background: #000 !important;
   color: #f5f5f5 !important;
-  #view:has(#ig) #ig,
-#view:has(#ig) #ig b,
-#view:has(#ig) #ig span,
-#view:has(#ig) #ig div {
+#view:has(#ig) #ig,
+#view:has(#ig) #ig * {
   color: #f5f5f5 !important;
+}
+
+#view:has(#ig) #ig [style*="color:#777"],
+#view:has(#ig) #ig [style*="color: #777"],
+#view:has(#ig) #ig [style*="color:#888"],
+#view:has(#ig) #ig [style*="color: #888"] {
+  color: #aaa !important;
 }
 
 #view:has(#ig) #ig [style*="color:#777"],
