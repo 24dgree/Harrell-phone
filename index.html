@@ -173,26 +173,28 @@ white-space: nowrap;
 
   let startY = null;
 
-screen.addEventListener('touchstart', e => {
-  startY = e.touches[0].clientY;
-}, { passive: true });
+  screen.addEventListener('touchstart', function (e) {
+    startY = e.touches[0].clientY;
+  }, { passive: true });
 
-screen.addEventListener('touchend', e => {
-  if (startY === null) return;
+  screen.addEventListener('touchend', function (e) {
+    if (startY === null) return;
 
-  const endY = e.changedTouches[0].clientY;
-  const distance = endY - startY;
+    const endY = e.changedTouches[0].clientY;
+    const distance = endY - startY;
 
-  if (view.querySelector('.lock') && distance < -35) {
-    home();
-  }
+    if (distance > 60) {
+      center.style.display = 'block';
+    } else if (distance < -60 && center.style.display === 'block') {
+      center.style.display = 'none';
+    }
 
-  startY = null;
-}, { passive: true });
+    startY = null;
+  }, { passive: true });
 
   close.addEventListener('click', function () {
     center.style.display = 'none';
   });
 })();
-  </script></body>
+</script></body>
 </html>
