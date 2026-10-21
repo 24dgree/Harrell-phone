@@ -174,34 +174,33 @@ white-space: nowrap;
 (function () {
   const screen = document.getElementById('screen');
   const center = document.getElementById('notification-center');
-  const close = document.getElementById('close-notifications');if (!screen || !center || !close) return;
+  const close = document.getElementById('close-notifications');
 
-let startY = null;
+  if (!screen || !center || !close) return;
 
-screen.addEventListener('touchstart', function (e) {
-startY = e.touches[0].clientY;
-}, { passive: true });
+  let startY = null;
 
-screen.addEventListener('touchend', function (e) {
-if (startY === null) return;
+  screen.addEventListener('touchstart', function (e) {
+    startY = e.touches[0].clientY;
+  }, { passive: true });
 
-const distance = e.changedTouches[0].clientY - startY;
+  screen.addEventListener('touchend', function (e) {
+    if (startY === null) return;
 
-if (distance > 60) {
-  center.style.display = 'block';
-} else if (distance < -60 && center.style.display === 'block') {
-  center.style.display = 'none';
-}
+    const distance = e.changedTouches[0].clientY - startY;
 
-startY = null;
+    if (distance > 60) {
+      center.style.display = 'block';
+    } else if (distance < -60 && center.style.display === 'block') {
+      center.style.display = 'none';
+    }
 
-}, { passive: true });
+    startY = null;
+  }, { passive: true });
 
-close.addEventListener('click', function () {
-center.style.display = 'none';
-});
+  close.addEventListener('click', function () {
+    center.style.display = 'none';
+  });
 })();
-</script>
-
-</body>
+</script></body>
 </html>
