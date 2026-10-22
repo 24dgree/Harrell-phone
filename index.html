@@ -765,7 +765,8 @@ dad: {
   ]
   }
 };
-
+const chat = chats[who];
+if (!chat) return;
 const body =
   '<div class="tiny" style="text-align:center;margin:3px 0 14px">iMessage · Today</div>' +
   chat.msgs.map(function(m) {
