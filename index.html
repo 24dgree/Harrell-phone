@@ -306,17 +306,66 @@ font-weight: 400 !important;
 #view:has(#ig) .appbar {
 border-bottom-color: #262626 !important;
 }
-  /* Messages: allow long conversations to scroll */
+/* Messages: full-screen background */
 #view:has(.bubble) {
+  position: absolute !important;
+  inset: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: #f4f5f7 !important;
+  z-index: 10 !important;
+}
+
+/* Fill the chat area without wallpaper gaps */
+#view:has(.bubble) .appview {
   position: absolute !important;
   top: 35px !important;
   bottom: 45px !important;
   left: 0 !important;
   right: 0 !important;
+  width: auto !important;
   height: auto !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  z-index: 10 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background: #f4f5f7 !important;
+  overflow-y: auto !important;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box !important;
+}
+
+/* Center the contact name */
+#view:has(.bubble) .appbar {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 38px;
+  background: #f4f5f7 !important;
+}
+
+#view:has(.bubble) .appbar .back {
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin: 0 !important;
+  z-index: 2;
+}
+
+#view:has(.bubble) .appbar .app-title {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 60% !important;
+  text-align: center !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 !important;
 }
 
 #view:has(.bubble) .appview {
