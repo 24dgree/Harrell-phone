@@ -376,13 +376,23 @@ instagram:{title:'Instagram',body:`
     <button data-photo="coffee" style="height:90px;border:0;padding:0;overflow:hidden"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=250&q=80" style="width:100%;height:100%;object-fit:cover" alt="Coffee"></button>
   </div>
 
-  <div style="border-top:1px solid #ddd;padding-top:12px;margin-top:12px;display:flex;justify-content:space-around;font-size:23px">
-    <button data-igtab="Home" style="border:0;background:none">⌂</button>
-    <button data-igtab="Search" style="border:0;background:none">⌕</button>
-    <button data-igtab="Reels" style="border:0;background:none">▣</button>
-    <button data-igtab="Activity" style="border:0;background:none">♡</button>
-    <button data-igtab="Profile" style="border:0;background:none">◉</button>
-  </div>
+<div style="border-top:1px solid #262626;padding:12px 0 4px;margin-top:12px;display:flex;align-items:center;justify-content:space-around">
+  <button data-igtab="Home" aria-label="Home" style="width:28px;height:28px;padding:3px;border:0;background:none;color:inherit;display:flex;align-items:center;justify-content:center">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg>
+  </button>
+  <button data-igtab="Search" aria-label="Search" style="width:28px;height:28px;padding:3px;border:0;background:none;color:inherit;display:flex;align-items:center;justify-content:center">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+  </button>
+  <button data-igtab="Reels" aria-label="Reels" style="width:28px;height:28px;padding:3px;border:0;background:none;color:inherit;display:flex;align-items:center;justify-content:center">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m10 8 6 4-6 4z"/><path d="m3.5 7 17 0"/></svg>
+  </button>
+  <button data-igtab="Activity" aria-label="Activity" style="width:28px;height:28px;padding:3px;border:0;background:none;color:inherit;display:flex;align-items:center;justify-content:center">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/></svg>
+  </button>
+  <button data-igtab="Profile" aria-label="Profile" style="width:28px;height:28px;padding:3px;border:0;background:none;color:inherit;display:flex;align-items:center;justify-content:center">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="9" r="3"/><path d="M6.5 19a6 6 0 0 1 11 0"/></svg>
+  </button>
+</div>
   <div id="ig-message" style="font-size:12px;margin-top:10px"></div>
 </div>`},
 spotify:{title:'Spotify',body:`<div style="text-align:center;padding:17px 4px"><div style="font-size:54px">♫</div><h3 style="font-size:20px;margin:8px 0">for the girl in yellow</h3><p class="tiny">A playlist by Harrell</p><div class="note">♫ Can't Help Falling in Love<br>♫ La Vie En Rose<br>♫ Until I Found You</div><button class="back" id="play">▶ Play preview</button><p class="tiny" id="play-status"></p></div>`},
