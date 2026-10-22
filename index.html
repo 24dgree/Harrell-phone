@@ -373,21 +373,30 @@ if (indicator) indicator.classList.remove('app-indicator');
 screen.style.backgroundImage="linear-gradient(#0003,#0003),url('5_20261017_175045_0000.png')";
 screen.style.backgroundSize='cover';
 screen.style.backgroundPosition='center';view.innerHTML=`<div class="home-top"><span>Thursday, October 29</span><span>88%</span></div><h1 class="owner">Harrell Evan</h1><div class="grid">${[['💬','Messages','messages'],['🖼️','Photos','photos'],['📝','Notes','notes'],['☎️','Phone','phone'],['◎','Instagram','instagram'],['♫','Spotify','spotify'],['▦','Calendar','calendar'],['⚙️','Settings','settings'],['🌐','Safari','safari']].map(a=>`<button class="app" data-app="${a[2]}"><span class="icon">${a[0]}</span><span>${a[1]}</span></button>`).join('')}</div><div class="dock"><button data-app="phone">☎️</button><button data-app="messages">💬</button><button data-app="safari">🌐</button><button data-app="photos">🖼️</button></div>`;bindAppButtons(view)}
-function appShell(title,body,back='home'){if(indicator) indicator.classList.add('app-indicator');view.innerHTML=`<section class="appview"><div class="appbar"><button class="back" id="back">‹ Back</button><span class="app-title">${title}</span></div><div>${body}</div></section><button class="home-btn" id="go-home">● Home</button>`;view.querySelector('#back').addEventListener('click',()=>back==='messages'?openApp('messages'):home());view.querySelector('#go-home').addEventListener('click',home);bindAppButtons(view);view.querySelectorAll('[data-chat]').forEach(b=>b.addEventListener('click',()=>openChat(b.dataset.chat)));view.querySelectorAll('[data-note]').forEach(b=>b.addEventListener('click',()=>openNote(b.dataset.note)));view.querySelectorAll('[data-photo]').forEach(b=>b.addEventListener('click',()=>openPhoto(b.dataset.photo)));const play=view.querySelector('#play');if(play)play.addEventListener('click',()=>view.querySelector('#play-status').textContent='Demo only — add your own music link in the source.')view.querySelectorAll('[data-carousel="paris"]').forEach(carousel => {
-  const track = carousel.querySelector('.carousel-track');
-  const dots = carousel.querySelectorAll('.carousel-dots span');
+function appShell(title,body,back='home'){
+if(indicator) indicator.classList.add('app-indicator');
+view.innerHTML=`<section class="appview"><div class="appbar"><button class="back" id="back">‹ Back</button><span class="app-title">${title}</span></div><div>${body}</div></section><button class="home-btn" id="go-home">● Home</button>`;
+view.querySelector('#back').addEventListener('click',()=>back==='messages'?openApp('messages'):home());
+view.querySelector('#go-home').addEventListener('click',home);
+bindAppButtons(view);
+view.querySelectorAll('[data-chat]').forEach(b=>b.addEventListener('click',()=>openChat(b.dataset.chat)));
+view.querySelectorAll('[data-note]').forEach(b=>b.addEventListener('click',()=>openNote(b.dataset.note)));
+view.querySelectorAll('[data-photo]').forEach(b=>b.addEventListener('click',()=>openPhoto(b.dataset.photo)));
+const play=view.querySelector('#play');
+if(play)play.addEventListener('click',()=>view.querySelector('#play-status').textContent='Demo only — add your own music link in the source.');
 
-  if (!track || !dots.length) return;
-
-  track.addEventListener('scroll', () => {
-    const index = Math.round(track.scrollLeft / track.clientWidth);
-
-    dots.forEach((dot, i) => {
-      dot.style.background = i === index ? '#3897f0' : '#ccc';
-    });
-  }, { passive: true });
+view.querySelectorAll('[data-carousel="paris"]').forEach(carousel=>{
+const track=carousel.querySelector('.carousel-track');
+const dots=carousel.querySelectorAll('.carousel-dots span');
+if(!track||!dots.length)return;
+track.addEventListener('scroll',()=>{
+const index=Math.round(track.scrollLeft/track.clientWidth);
+dots.forEach((dot,i)=>{
+dot.style.background=i===index?'#3897f0':'#ccc';
 });
-}
+},{passive:true});
+});
+  }
 function bindAppButtons(el){el.querySelectorAll('[data-app]').forEach(b=>b.addEventListener('click',()=>openApp(b.dataset.app)))}
 function openApp(name){const a=appData[name];if(a)appShell(a.title,a.body)}
 function openChat(who){const name=who==='shan'?'Shannika 🌻':who==='brian'?'Brian':'Adam';const msgs=who==='shan'?[['received','Did you eat yet?'],['sent','I did. Have you?'],['received','That wasn’t my question, Harrell.'],['sent','I know. I’m ordering you something.'],['received','You’re impossible. 💛']]:who==='brian'?[['received','Mate, answer your phone.'],['sent','I’m busy.'],['received','You’re always busy. Wedding stuff. Call me.']]:[['received','Wedding stuff. Call me.'],['sent','Send me the list.'],['received','I sent it yesterday.'],['sent','Then send it again.']];appShell(name,`<div class="tiny" style="text-align:center;margin:3px 0 14px">iMessage · Today</div>${msgs.map(m=>`<div class="bubble ${m[0]}">${m[1]}</div>`).join('')}<p class="tiny" style="text-align:center;margin-top:20px">End of conversation preview</p>`,'messages')}
