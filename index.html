@@ -577,7 +577,6 @@ startY = null;
 startX = null;
 }, { passive: true });
 </script>
-<style>
 <style>  
 .status-icons {
   display: inline-flex;
@@ -589,13 +588,23 @@ startX = null;
   padding: 0;
   transform: translateX(-8px);
 }
+.status-icons {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-left: 12px;
+  margin-right: 0;
+  padding: 0;
+  transform: none;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 .status-icons svg {
   display: block;
   flex-shrink: 0;
-  margin-left: 5px;
-}
-
-.status-icons svg:first-child {
   margin-left: 0;
   }
 .unlock {
