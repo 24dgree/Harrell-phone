@@ -598,7 +598,7 @@ msgs: [
 const chat = chats[who];
 if (!chat) return;
 
-const body = "<div class="tiny" style="text-align:center;margin:3px 0 14px">iMessage · Today</div>${chat.msgs.map(m=>"<div class="bubble ${m[0]}">${m[1]}</div>").join('')}<p class="tiny" style="text-align:center;margin-top:20px">End of conversation preview</p>";
+const body = '<div class="tiny" style="text-align:center;margin:3px 0 14px">iMessage · Today</div>' + chat.msgs.map(function(m) { return '<div class="bubble ' + m[0] + '">' + m[1] + '</div>'; }).join('') + '<p class="tiny" style="text-align:center;margin-top:20px">End of conversation preview</p>';
 
 appShell(chat.name,body,'messages');
   }
