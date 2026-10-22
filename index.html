@@ -760,12 +760,21 @@ dad: {
   }
 };
 
-const chat = chats[who];
-if (!chat) return;
+const body =
+  '<div class="tiny" style="text-align:center;margin:3px 0 14px">iMessage · Today</div>' +
+  chat.msgs.map(function(m) {
+    return '<div class="bubble ' + m[0] + '">' + m[1] + '</div>';
+  }).join('') +
+  '<p class="tiny" style="text-align:center;margin-top:20px;padding-bottom:12px">Happy Birthday My Love, Shannika Kalani.</p>';
 
-const body = '<div class="tiny" style="text-align:center;margin:3px 0 14px">iMessage · Today</div>' + chat.msgs.map(function(m) { return '<div class="bubble ' + m[0] + '">' + m[1] + '</div>'; }).join('') + '<p class="tiny" style="text-align:center;margin-top:20px">Happy Birthday My Love, Shannika Kalani.</p>';
+appShell(chat.name, body, 'messages');
 
-appShell(chat.name,body,'messages');
+requestAnimationFrame(function() {
+  const chatView = document.querySelector('#view .appview');
+  if (chatView) {
+    chatView.scrollTop = chatView.scrollHeight;
+  }
+});
   }
 const noteData={wedding:['Wedding Plans','December. London. Keep it intimate. Ask Dad about the church. Confirm the flowers.'],shan:['Things I Should Tell Shan','I don’t always know how to say what I mean. That doesn’t mean I feel any less. She deserves to hear it from me, not find it in a note.'],gift:['Her Birthday','Flowers. Something thoughtful. No last-minute decisions. Remember what she said about yellow.'],private:['Read When She’s Not Looking','Sometimes I still think about how close we came to losing each other. I don’t want us to become two people who know everything about each other except how to stay.']};
 function openNote(id){const n=noteData[id];appShell('Notes',`<article class="note"><h3 style="font-size:19px;margin:0 0 12px">${n[0]}</h3>${n[1]}</article>`,'notes')}
