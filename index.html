@@ -548,7 +548,60 @@ dot.style.background=i===index?'#3897f0':'#ccc';
   }
 function bindAppButtons(el){el.querySelectorAll('[data-app]').forEach(b=>b.addEventListener('click',()=>openApp(b.dataset.app)))}
 function openApp(name){const a=appData[name];if(a)appShell(a.title,a.body)}
-function openChat(who){const name=who==='shan'?'Shannika 🌻':who==='brian'?'Brian':'Adam';const msgs=who==='shan'?[['received','Did you eat yet?'],['sent','I did. Have you?'],['received','That wasn’t my question, Harrell.'],['sent','I know. I’m ordering you something.'],['received','You’re impossible. 💛']]:who==='brian'?[['received','Mate, answer your phone.'],['sent','I’m busy.'],['received','You’re always busy. Wedding stuff. Call me.']]:[['received','Wedding stuff. Call me.'],['sent','Send me the list.'],['received','I sent it yesterday.'],['sent','Then send it again.']];appShell(name,`<div class="tiny" style="text-align:center;margin:3px 0 14px">iMessage · Today</div>${msgs.map(m=>`<div class="bubble ${m[0]}">${m[1]}</div>`).join('')}<p class="tiny" style="text-align:center;margin-top:20px">End of conversation preview</p>`,'messages')}
+function openChat(who){
+const chats = {
+shan: {
+name: 'Shannika 🌻',
+msgs: [
+['received','Did you eat yet?'],
+['sent','I did. Have you?'],
+['received','That wasn’t my question, Harrell.'],
+['sent','I know. I’m ordering you something.'],
+['received','You’re impossible. 💛']
+]
+},
+brian: {
+name: 'Brian',
+msgs: [
+['received','Mate, answer your phone.'],
+['sent','I’m busy.'],
+['received','You’re always busy. Wedding stuff. Call me.']
+]
+},
+ben: {
+name: 'Ben',
+msgs: [
+['received','Wedding stuff. Call me.'],
+['sent','Send me the list.'],
+['received','I sent it yesterday.'],
+['sent','Then send it again.']
+]
+},
+mom: {
+name: 'Mom',
+msgs: [
+['received','Darling, call me when you can.'],
+['sent','I’m a little busy, Mum. Is everything alright?'],
+['received','Everything is fine. I simply miss hearing your voice. ❤️']
+]
+},
+dad: {
+name: 'Dad',
+msgs: [
+['received','We need to discuss the wedding.'],
+['sent','I thought we already had.'],
+['received','There are still a few things we need to settle, Harrell.']
+]
+}
+};
+
+const chat = chats[who];
+if (!chat) return;
+
+const body = "<div class="tiny" style="text-align:center;margin:3px 0 14px">iMessage · Today</div>${chat.msgs.map(m=>"<div class="bubble ${m[0]}">${m[1]}</div>").join('')}<p class="tiny" style="text-align:center;margin-top:20px">End of conversation preview</p>";
+
+appShell(chat.name,body,'messages');
+  }
 const noteData={wedding:['Wedding Plans','December. London. Keep it intimate. Ask Dad about the church. Confirm the flowers.'],shan:['Things I Should Tell Shan','I don’t always know how to say what I mean. That doesn’t mean I feel any less. She deserves to hear it from me, not find it in a note.'],gift:['Her Birthday','Flowers. Something thoughtful. No last-minute decisions. Remember what she said about yellow.'],private:['Read When She’s Not Looking','Sometimes I still think about how close we came to losing each other. I don’t want us to become two people who know everything about each other except how to stay.']};
 function openNote(id){const n=noteData[id];appShell('Notes',`<article class="note"><h3 style="font-size:19px;margin:0 0 12px">${n[0]}</h3>${n[1]}</article>`,'notes')}
 function openPhoto(id){const labels={sunflower:'The first sunflower',paris:'Paris, after the rain',venice:'Venice · day 100',london:'London, lately',dinner:'A night worth remembering',sleep:'Shan asleep on my shoulder'};appShell('Photo',`<div style="min-height:300px;border-radius:15px;background:linear-gradient(145deg,#d7c5a6,#627b83);display:grid;place-items:center;text-align:center;padding:20px;font-size:22px">♡<br><span style="font-size:14px">${labels[id]||'A memory'}</span></div><p class="tiny">A fictional photo placeholder. Replace with your own image in the HTML.</p>`,'photos')}
