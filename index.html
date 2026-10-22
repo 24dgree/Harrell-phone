@@ -361,7 +361,60 @@ border-bottom-color: #262626 !important;
 <script>
 const view=document.getElementById('view'), screen=document.getElementById('screen'), indicator=document.getElementById('indicator');
 const appData={
-messages:{title:'Messages',body:`<button class="row" data-chat="shan"><span class="avatar"><img src="NAMA-FOTO-SHAN.jpg" alt="P.W.D"></span><span><b>P.W.D</b><small>Did you eat yet?</small></span></button><button class="row" data-chat="ben"><span class="avatar"><img src="NAMA-FOTO-BEN.jpg" alt="Benedick"></span><span><b>Benedick</b><small>Mate, answer your phone.</small></span></button><button class="row" data-chat="brian"><span class="avatar"><img src="NAMA-FOTO-BRIAN.jpg" alt="Bribri"></span><span><b>Bribri</b><small>Call me.</small></span></button><button class="row" data-chat="mom"><span class="avatar"><img src="AVA CHAT MOM.jpg" alt="V❤️"></span><span><b>V❤️</b><small>El, her parents, especially her mom...</small></span></button><button class="row" data-chat="dad"><span class="avatar"><img src="AVA CHAT DAD.jpg" alt="Reginald"></span><span><b>Reginald</b><small>Oh, she’s going to love this.</small></span></button>`},
+messages: {
+  title: 'Messages',
+  body: `
+    <button class="row" data-chat="shan">
+      <span class="avatar">
+        <img src="AVA CHAT PWD.jpg" alt="P.W.D">
+      </span>
+      <span>
+        <b>P.W.D</b>
+        <small>Did you eat yet?</small>
+      </span>
+    </button>
+
+    <button class="row" data-chat="brian">
+      <span class="avatar">
+        <img src="AVA CHAT BRIBRI.jpg" alt="Bribri">
+      </span>
+      <span>
+        <b>Bribri</b>
+        <small>Brooo, answer your phone.</small>
+      </span>
+    </button>
+
+    <button class="row" data-chat="ben">
+      <span class="avatar">
+        <img src="AVA CHAT BENEDICK.jpg" alt="Benedick">
+      </span>
+      <span>
+        <b>Benedick</b>
+        <small>Wedding stuff. Call me.</small>
+      </span>
+    </button>
+
+    <button class="row" data-chat="mom">
+      <span class="avatar">
+        <img src="AVA CHAT MOM.jpg" alt="V❤️">
+      </span>
+      <span>
+        <b>V❤️</b>
+        <small>El, her parents, especially her mom...</small>
+      </span>
+    </button>
+
+    <button class="row" data-chat="dad">
+      <span class="avatar">
+        <img src="AVA CHAT DAD.jpg" alt="Reginald">
+      </span>
+      <span>
+        <b>Reginald</b>
+        <small>Oh, she’s going to love this.</small>
+      </span>
+    </button>
+  `
+},
 photos:{title:'Photos',body:`<div class="tiny" style="margin-bottom:12px">Library · 4,821 Photos</div><div class="photo-grid"><button class="photo" data-photo="sunflower">🌻<br>Shan's favourite</button><button class="photo" data-photo="paris">🥂<br>Paris</button><button class="photo" data-photo="venice">🌊<br>Venice</button><button class="photo" data-app="hidden">🔒<br>Hidden Album</button></div>`},
 notes:{title:'Notes',body:`<button class="row" data-note="wedding"><span>📒</span><span><b>Wedding Plans</b><small>Things to arrange before December.</small></span></button><button class="row" data-note="shan"><span>💛</span><span><b>Things I Should Tell Shan</b><small>A few things I keep putting off.</small></span></button><button class="row" data-note="gift"><span>🎁</span><span><b>Her Birthday</b><small>Flowers, surprises, and everything she deserves.</small></span></button><button class="row" data-note="private"><span>🔒</span><span><b>Read When She's Not Looking</b><small>Definitely not for Shan to find.</small></span></button>`},
 phone:{title:'Recents',body:`<div class="row"><span class="avatar">💛</span><span><b>Shannika</b><small>Outgoing FaceTime · Yesterday</small></span></div><div class="row"><span class="avatar">B</span><span><b>Brian</b><small>Missed call · 08:42</small></span></div><div class="row"><span class="avatar">A</span><span><b>Adam</b><small>Outgoing call · Monday</small></span></div>`},
