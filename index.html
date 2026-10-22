@@ -527,7 +527,6 @@ function appShell(title,body,back='home'){
 if(indicator) indicator.classList.add('app-indicator');
 view.innerHTML=`<section class="appview"><div class="appbar"><button class="back" id="back">‹ Back</button><span class="app-title">${title}</span></div><div>${body}</div></section>`;
 view.querySelector('#back').addEventListener('click',()=>back==='messages'?openApp('messages'):home());
-view.querySelector('#go-home').addEventListener('click',home);
 bindAppButtons(view);
 view.querySelectorAll('[data-chat]').forEach(b=>b.addEventListener('click',()=>openChat(b.dataset.chat)));
 view.querySelectorAll('[data-note]').forEach(b=>b.addEventListener('click',()=>openNote(b.dataset.note)));
