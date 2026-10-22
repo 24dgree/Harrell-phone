@@ -668,7 +668,43 @@ spotify:{title:'Spotify',body:`<div id="spotify" style="font-family:Arial,sans-s
   </div>
 
 </div>`},
-calendar:{title:'Calendar',body:`<h3 style="font-size:20px;margin:4px 0 14px">October 2026</h3><div class="note"><b>15 OCT</b><br>Harrell's birthday</div><div class="note"><b>21 OCT</b><br>Nothing scheduled. For once.</div><div class="note"><b>29 OCT</b><br>Shannika's birthday 🎂</div><div class="note"><b>26 DEC</b><br>Our day. ❤️</div>`},
+calendar:{title:'Calendar',body:`
+<div class="iphone-calendar">
+  <div class="cal-heading">
+    <div>
+      <div class="cal-subtitle">CALENDAR</div>
+      <h2 id="cal-month-title">October 2026</h2>
+    </div>
+    <button class="cal-bell" id="cal-bell" aria-label="Notifications">
+      ♧<span class="cal-badge"></span>
+    </button>
+  </div>
+
+  <div class="cal-nav">
+    <button id="cal-prev">‹</button>
+    <button id="cal-today">Today</button>
+    <button id="cal-next">›</button>
+  </div>
+
+  <div class="cal-weekdays">
+    <span>S</span><span>M</span><span>T</span>
+    <span>W</span><span>T</span><span>F</span><span>S</span>
+  </div>
+
+  <div class="cal-grid" id="cal-grid"></div>
+
+  <div class="cal-agenda">
+    <h3 id="cal-agenda-title">October 15</h3>
+    <div id="cal-agenda-list"></div>
+  </div>
+
+  <div id="cal-notifications" hidden>
+    <h3>Notifications</h3>
+    <div id="cal-notification-list"></div>
+    <button id="cal-close-notifications">Done</button>
+  </div>
+</div>
+`},
 settings:{title:'Settings',body:`<div class="row">✈️ &nbsp; Airplane Mode</div><div class="row">📶 &nbsp; Wi-Fi · Connected</div><div class="row">🔋 &nbsp; Battery · 100%</div><div class="row">🔒 &nbsp; Face ID & Passcode</div>`},
 safari:{title:'Safari',body:`<div class="note" style="background:#e5eaf0">🔍 &nbsp; Search the web</div><b>Recently visited</b><div class="row">Wedding venues in London</div><div class="row">Paris weather September</div><div class="row">How to keep flowers fresh</div>`},
 hidden:{title:'Hidden Album',body:`<div class="photo-grid"><button class="photo" data-photo="sleep" style="min-height:190px">💛<br>Shan asleep on my shoulder</button><button class="photo" data-photo="sunflower" style="min-height:190px">🌻<br>The first sunflower</button></div><p class="tiny" style="margin-top:12px">Some things are better kept to myself.</p>`}
