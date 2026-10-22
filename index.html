@@ -659,5 +659,44 @@ startX = null;
     center.style.display = 'none';
   });
 })();
-</script></body>
+/* Spotify full screen */
+#view:has(#spotify) {
+position: absolute !important;
+inset: 0 !important;
+background: #121212 !important;
+z-index: 10 !important;
+}
+
+#view:has(#spotify) .appview {
+position: absolute !important;
+inset: 0 !important;
+width: 100% !important;
+height: 100% !important;
+min-height: 100% !important;
+margin: 0 !important;
+padding: 0 !important;
+box-sizing: border-box !important;
+overflow-y: auto !important;
+background: #121212 !important;
+border-radius: 0 !important;
+}
+
+#spotify {
+width: 100% !important;
+min-height: 100% !important;
+box-sizing: border-box !important;
+background: #121212 !important;
+}
+
+#view:has(#spotify) .appbar {
+background: #121212 !important;
+color: white !important;
+}
+
+#view:has(#spotify) .app-title,
+#view:has(#spotify) .back {
+color: white !important;
+  }
+</script>
+</body>
 </html>
