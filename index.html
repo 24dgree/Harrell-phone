@@ -1037,6 +1037,169 @@ home();
 startY = null;
 startX = null;
 }, { passive: true });
+function initCalendar() {
+  const months = [
+    { year: 2026, month: 9 },
+    { year: 2026, month: 10 },
+    { year: 2026, month: 11 }
+  ];
+
+  let monthIndex = 0;
+  let selectedDate = '2026-10-15';
+
+  const events = {
+    '2026-10-15': [
+      { title: "Harrell's Birthday 🎂", detail: 'A special day.' }
+    ],
+    '2026-10-29': [
+      { title: "Shannika's Birthday 🎂", detail: 'My favorite person.' }
+    ],
+    '2026-12-26': [
+      { title: 'Our Day ❤️', detail: 'A day to remember.' }
+    ]
+  };
+
+  const monthTitle = document.getElementById('cal-month-title');
+  const grid = document.getElementById('cal-grid');
+  const agendaTitle = document.getElementById('cal-agenda-title');
+  const agendaList = document.getElementById('cal-agenda-list');
+  const bell = document.getElementById('cal-bell');
+  const notifications = document.getElementById('cal-notifications');
+  const notificationList = document.getElementById('cal-notification-list');
+
+  if (!monthTitle || !grid || !agendaTitle || !agendaList) return;
+
+  function dateKey(year, month, day) {
+    return year + '-' +
+      String(month + 1).padStart(2, '0') + '-' +
+      String(day).padStart(2, '0');
+  }
+
+  function renderAgenda() {
+    const parts = selectedDate.split('-').map(Number);
+    const date = new Date(parts[0], parts[1] - 1, parts[2]);
+
+    agendaTitle.textContent = date.toLocaleDateString('en-GB', {
+      month: 'long',
+      day: 'numeric'
+    });
+
+    const list = events[selectedDate] || [];
+
+    agendaList.innerHTML = list.length
+      ? list.map(event =>
+          `<div class="cal-event">
+            ${event.title}
+            <small>${event.detail}</small>
+          </div>`
+        ).join('')
+      : '<div class="cal-empty">No events scheduled.</div>';
+  }
+
+  function renderCalendar() {
+    const current = months[monthIndex];
+    const year = current.year;
+    const month = current.month;
+
+    monthTitle.textContent = new Date(year, month, 1)
+      .toLocaleDateString('en-US', {
+        month: 'long',
+        year: 'numeric'
+      });
+
+    grid.innerHTML = '';
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    for (let i = 0; i < firstDay; i++) {
+      const blank = document.createElement('span');
+      grid.appendChild(blank);
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const key = dateKey(year, month, day);
+      const button = document.createElement('button');
+
+      button.className = 'cal-day';
+      button.textContent = day;
+      button.type = 'button';
+
+      if (key === selectedDate) {
+        button.classList.add('selected');
+      }
+
+      if (events[key] && events[key].length) {
+        button.classList.add('has-event');
+      }
+
+      button.addEventListener('click', () => {
+        selectedDate = key;
+        renderCalendar();
+        renderAgenda();
+      });
+
+      grid.appendChild(button);
+    }
+
+    renderAgenda();
+  }
+
+  document.getElementById('cal-prev').onclick = () => {
+    if (monthIndex > 0) {
+      monthIndex--;
+      const m = months[monthIndex];
+      selectedDate = dateKey(m.year, m.month, 1);
+      renderCalendar();
+    }
+  };
+
+  document.getElementById('cal-next').onclick = () => {
+    if (monthIndex < months.length - 1) {
+      monthIndex++;
+      const m = months[monthIndex];
+      selectedDate = dateKey(m.year, m.month, 1);
+      renderCalendar();
+    }
+  };
+
+  document.getElementById('cal-today').onclick = () => {
+    const m = months[monthIndex];
+    selectedDate = dateKey(m.year, m.month, 1);
+    renderCalendar();
+  };
+
+  if (bell && notifications) {
+    bell.onclick = () => {
+      notifications.hidden = !notifications.hidden;
+
+      if (!notifications.hidden) {
+        const allEvents = Object.entries(events)
+          .flatMap(([date, items]) =>
+            items.map(event => ({ date, ...event }))
+          )
+          .sort((a, b) => a.date.localeCompare(b.date));
+
+        notificationList.innerHTML = allEvents.map(event =>
+          `<div class="cal-event">
+            ${event.title}
+            <small>${event.date}</small>
+          </div>`
+        ).join('') || '<div class="cal-empty">No notifications.</div>';
+      }
+    };
+  }
+
+  const closeButton = document.getElementById('cal-close-notifications');
+
+  if (closeButton && notifications) {
+    closeButton.onclick = () => {
+      notifications.hidden = true;
+    };
+  }
+
+  renderCalendar();
+  }
 </script>
 <style>  
 .status-icons {
