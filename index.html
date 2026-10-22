@@ -386,7 +386,8 @@ function appShell(title,body,back='home'){if(indicator) indicator.classList.add(
       dot.style.background = i === index ? '#3897f0' : '#ccc';
     });
   }, { passive: true });
-});}
+});
+}
 function bindAppButtons(el){el.querySelectorAll('[data-app]').forEach(b=>b.addEventListener('click',()=>openApp(b.dataset.app)))}
 function openApp(name){const a=appData[name];if(a)appShell(a.title,a.body)}
 function openChat(who){const name=who==='shan'?'Shannika 🌻':who==='brian'?'Brian':'Adam';const msgs=who==='shan'?[['received','Did you eat yet?'],['sent','I did. Have you?'],['received','That wasn’t my question, Harrell.'],['sent','I know. I’m ordering you something.'],['received','You’re impossible. 💛']]:who==='brian'?[['received','Mate, answer your phone.'],['sent','I’m busy.'],['received','You’re always busy. Wedding stuff. Call me.']]:[['received','Wedding stuff. Call me.'],['sent','Send me the list.'],['received','I sent it yesterday.'],['sent','Then send it again.']];appShell(name,`<div class="tiny" style="text-align:center;margin:3px 0 14px">iMessage · Today</div>${msgs.map(m=>`<div class="bubble ${m[0]}">${m[1]}</div>`).join('')}<p class="tiny" style="text-align:center;margin-top:20px">End of conversation preview</p>`,'messages')}
