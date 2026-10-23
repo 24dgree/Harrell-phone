@@ -1220,10 +1220,9 @@ const monthTitle = document.getElementById('cal-month-title');
 
       if (!notifications.hidden) {
         const allEvents = Object.entries(events)
-          .flatMap(([date, items]) =>
-            items.map(event => ({ date, ...event }))
-          )
-          .sort((a, b) => a.date.localeCompare(b.date));
+  .filter(([date, event]) => event && event.title)
+  .map(([date, event]) => ({ date, ...event }))
+  .sort((a, b) => a.date.localeCompare(b.date));
 
         notificationList.innerHTML = allEvents.map(event =>
           `<div class="cal-event">
