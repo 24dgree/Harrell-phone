@@ -1177,8 +1177,8 @@ const monthTitle = document.getElementById('cal-month-title');
         button.classList.add('selected');
       }
 
-      if (events[key] && events[key].length) {
-        button.classList.add('has-event');
+      if (events[key] && events[key].title) {
+  button.classList.add('has-event');
       }
 
       button.addEventListener('click', () => {
