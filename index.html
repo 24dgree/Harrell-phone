@@ -1092,11 +1092,17 @@ startY = null;
 startX = null;
 }, { passive: true });
 function initCalendar() {
-  const months = [
-    { year: 2026, month: 9 },
-    { year: 2026, month: 10 },
-    { year: 2026, month: 11 }
-  ];
+  const months = Array.from({length: 22}, (_, i) => {
+  const d = new Date(2025, 3 + i, 1);
+  return {
+    year: d.getFullYear(),
+    month: d.getMonth()
+  };
+});
+
+let monthIndex = months.findIndex(
+  m => m.year === 2026 && m.month === 9
+);
 
   let monthIndex = 0;
   let selectedDate = '2026-10-15';
