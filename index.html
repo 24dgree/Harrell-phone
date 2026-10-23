@@ -1117,12 +1117,13 @@ const monthTitle = document.getElementById('cal-month-title');
 
   if (!monthTitle || !grid || !agendaTitle || !agendaList) return;
 
-  function dateKey(year, month, day) {
+    function dateKey(year, month, day) {
     return year + '-' +
       String(month + 1).padStart(2, '0') + '-' +
       String(day).padStart(2, '0');
-  {
-    function renderAgenda() {
+  }
+
+  function renderAgenda() {
   const parts = selectedDate.split('-').map(Number);
   const date = new Date(parts[0], parts[1] - 1, parts[2]);
 
