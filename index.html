@@ -1121,27 +1121,24 @@ const monthTitle = document.getElementById('cal-month-title');
     return year + '-' +
       String(month + 1).padStart(2, '0') + '-' +
       String(day).padStart(2, '0');
-  }
+  {
+    function renderAgenda() {
+  const parts = selectedDate.split('-').map(Number);
+  const date = new Date(parts[0], parts[1] - 1, parts[2]);
 
-  function renderAgenda() {
-    const parts = selectedDate.split('-').map(Number);
-    const date = new Date(parts[0], parts[1] - 1, parts[2]);
+  agendaTitle.textContent = date.toLocaleDateString('en-GB', {
+    month: 'long',
+    day: 'numeric'
+  });
 
-    agendaTitle.textContent = date.toLocaleDateString('en-GB', {
-      month: 'long',
-      day: 'numeric'
-    });
+  const event = events[selectedDate];
 
-    const list = events[selectedDate] || [];
-
-    agendaList.innerHTML = list.length
-      ? list.map(event =>
-          `<div class="cal-event">
-            ${event.title}
-            <small>${event.detail}</small>
-          </div>`
-        ).join('')
-      : '<div class="cal-empty">No events scheduled.</div>';
+  agendaList.innerHTML = event && event.title
+    ? `<div class="cal-event">
+        ${event.title}
+        <small>${event.detail || ''}</small>
+      </div>`
+    : '<div class="cal-empty">No events scheduled.</div>';
   }
 
   function renderCalendar() {
