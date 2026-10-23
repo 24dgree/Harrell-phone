@@ -1814,12 +1814,22 @@ const monthTitle = document.getElementById('cal-month-title');
 
   const event = events[selectedDate];
 
-  agendaList.innerHTML = event && event.title
-    ? `<div class="cal-event">
-        ${event.title}
-        <small>${event.detail || ''}</small>
-      </div>`
-    : '<div class="cal-empty">No events scheduled.</div>';
+  if (!event || !event.title) {
+    agendaList.innerHTML =
+      '<div class="cal-empty">No events scheduled.</div>';
+    return;
+  }
+
+  const details = (event.detail || '')
+    .split('<br>')
+    .map(item => item.trim())
+    .filter(Boolean);
+
+  agendaList.innerHTML =
+    `<div class="cal-event">${event.title}</div>` +
+    details.map(item =>
+      `<div class="cal-event">${item}</div>`
+    ).join('');
   }
 
   function renderCalendar() {
