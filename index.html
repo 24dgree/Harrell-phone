@@ -1105,7 +1105,687 @@ m => m.year === 2026 && m.month === 9
 );
 
 let selectedDate = '2026-10-15';
-const events = {};
+const events = {
+  // APRIL 2025
+  "2025-04-06": {
+    title: "Need therapy",
+    detail: "fishing at New York with Brian."
+  },
+
+  // MAY 2025
+  "2025-05-24": {
+    title: "Lombok's",
+    detail: "spontaneous trip with Ben. Looking for Manta and Komodo."
+  },
+  "2025-05-25": {
+    title: "Lombok's",
+    detail: "spontaneous trip with Ben. Looking for Manta and Komodo."
+  },
+  "2025-05-26": {
+    title: "Lombok's",
+    detail: "spontaneous trip with Ben. Looking for Manta and Komodo."
+  },
+  "2025-05-29": {
+    title: "Bought Ashen's friends",
+    detail: "couple with 505"
+  },
+
+  // JUNE 2025
+  "2025-06-05": {
+    title: "Barbershop",
+    detail: "dye your hair with Red."
+  },
+  "2025-06-09": {
+    title: "Going out with Jayden",
+    detail: "come home with Bitsy."
+  },
+  "2025-06-12": {
+    title: "Meeting",
+    detail: ""
+  },
+  "2025-06-16": {
+    title: "Meeting",
+    detail: "at Namaaz"
+  },
+  "2025-06-17": {
+    title: "Help Brian's event",
+    detail: ""
+  },
+  "2025-06-24": {
+    title: "Eclipse's Bar",
+    detail: ""
+  },
+
+  // JULY 2025
+  "2025-07-26": {
+    title: "Sagesse's",
+    detail: ""
+  },
+  "2025-07-27": {
+    title: "Bakerzin, Sency",
+    detail: ""
+  },
+  "2025-07-31": {
+    title: "Wedding's attend",
+    detail: "Brian's Mom need us as groomsmen for her family's."
+  },
+
+  // AUGUST 2025
+  "2025-08-05": {
+    title: "Moving at GP",
+    detail: ""
+  },
+  "2025-08-08": {
+    title: "Basecamp 505",
+    detail: "night ride with boys."
+  },
+  "2025-08-20": {
+    title: "Making money",
+    detail: ""
+  },
+  "2025-08-31": {
+    title: "Bandung's with boys",
+    detail: "visits Situ Patenggang and Braga."
+  },
+
+  // SEPTEMBER 2025
+  "2025-09-02": {
+    title: "Meet Mamah Yeni",
+    detail: "Bandung with Eja and Brian."
+  },
+  "2025-09-04": {
+    title: "Games together",
+    detail: "playing PB together at my place."
+  },
+  "2025-09-06": {
+    title: "Making tattoo",
+    detail: "appointment for her at Seminyak."
+  },
+  "2025-09-07": {
+    title: "Waterbomb event",
+    detail: "at Bali with Shan."
+  },
+
+  // OCTOBER 2025
+  "2025-10-12": {
+    title: "HIKING",
+    detail: "Mt. Prau"
+  },
+  "2025-10-15": {
+    title: "My birthday",
+    detail: ""
+  },
+  "2025-10-17": {
+    title: "I'Orangerie",
+    detail: "I see water lillies by Monet for over 7473828827 times."
+  },
+  "2025-10-19": {
+    title: "Museè d'Orsay",
+    detail: ""
+  },
+
+  // NOVEMBER 2025
+  "2025-11-14": {
+    title: "Mokpo",
+    detail: "tried Mokpo marine cable car with 505."
+  },
+  "2025-11-15": {
+    title: "HIKING",
+    detail: "with 505 at Wolchulsan National Park."
+  },
+  "2025-11-16": {
+    title: "Korean GP's",
+    detail: "#SynctheSoulGP2025"
+  },
+  "2025-11-17": {
+    title: "Shopping",
+    detail: "bought tiny shoes for her."
+  },
+  "2025-11-18": {
+    title: "Class",
+    detail: "re-arrange flowers with Shan at Bali."
+  },
+  "2025-11-19": {
+    title: "Galungan",
+    detail: "a little progress with her at Sanur."
+  },
+  "2025-11-21": {
+    title: "Soul reset",
+    detail: "Spa with Shan"
+  },
+
+  // DECEMBER 2025
+  "2025-12-01": {
+    title: "Flu shot",
+    detail: ""
+  },
+  "2025-12-07": {
+    title: "Prambanan with 505!",
+    detail: ""
+  },
+  "2025-12-17": {
+    title: "Siloam hospital",
+    detail: "accompany Seraya with Marshall."
+  },
+  "2025-12-20": {
+    title: "Art's",
+    detail: ""
+  },
+  "2025-12-21": {
+    title: "YM's",
+    detail: "golfing and sushi time with boys."
+  },
+  "2025-12-25": {
+    title: "Christmas Party with 505",
+    detail: ""
+  },
+  "2025-12-29": {
+    title: "Paris's",
+    detail: ""
+  },
+  "2025-12-30": {
+    title: "Sagesse's",
+    detail: ""
+  },
+  "2025-12-31": {
+    title: "Zürich",
+    detail: "pickup Shan."
+  },
+
+  // JANUARY 2026
+  "2026-01-01": {
+    title: "St. Galen Cathedral",
+    detail: "George and Charlotte's"
+  },
+  "2026-01-02": {
+    title: "St. Moritz",
+    detail: "Horse riding, Skiing, trying Prada lift.<br>pick up Shan, shopping, and having dinner together."
+  },
+  "2026-01-03": {
+    title: "Rome",
+    detail: "meet Bli Bisma and Mbok Yas with Shan at Trevi Fontain."
+  },
+  "2026-01-04": {
+    title: "Cripta dei Cappuccini",
+    detail: "don't forget to visit Amorino after this."
+  },
+  "2026-01-05": {
+    title: "Musei Vaticani",
+    detail: "don't forget to take a picture of Bramante Staircase!"
+  },
+  "2026-01-14": {
+    title: "RS. Pondok Indah",
+    detail: "visits Angling with Nathan."
+  },
+  "2026-01-18": {
+    title: "Making tiramisu",
+    detail: "with Raki and Bitsy."
+  },
+  "2026-01-19": {
+    title: "Plaza Senayan",
+    detail: "watching Alas Roban after work with Mario, Brian, Amara, Summer, and Vechia."
+  },
+  "2026-01-21": {
+    title: "505's time!",
+    detail: ""
+  },
+  "2026-01-23": {
+    title: "Meeting",
+    detail: ""
+  },
+  "2026-01-25": {
+    title: "Liwet?",
+    detail: "with Icy and Brian at Kinan's home."
+  },
+  "2026-01-29": {
+    title: "Eon's Hotel",
+    detail: "this so called family meeting. Just sit with Bebet and Flo, ignore all."
+  },
+  "2026-01-30": {
+    title: "Assignment",
+    detail: "I hate you Reginald.<br>pickup Shan at 4."
+  },
+
+  // FEBRUARY 2026
+  "2026-02-01": {
+    title: "Horse riding",
+    detail: "with Bebet at London."
+  },
+  "2026-02-04": {
+    title: "London's",
+    detail: ""
+  },
+  "2026-02-06": {
+    title: "SG ✈️ BALI",
+    detail: "bring extra clothes."
+  },
+  "2026-02-07": {
+    title: "Nathan and Kathe's",
+    detail: "morning breakie at Sofitel"
+  },
+  "2026-02-08": {
+    title: "Dimsum",
+    detail: "sauna's time with so called my situationship."
+  },
+  "2026-02-12": {
+    title: "Jagakarsa",
+    detail: ""
+  },
+  "2026-02-14": {
+    title: "Best day as her situationship",
+    detail: "Arrange flowers together at day, theater musical at night. For the first time she's asking me out. We took many cute picture here."
+  },
+  "2026-02-15": {
+    title: "Tea time",
+    detail: "afternoon tea at La Patisserie with soon-to-be my Sunny."
+  },
+  "2026-02-17": {
+    title: "Visit my situationship",
+    detail: ""
+  },
+  "2026-02-19": {
+    title: "Online meeting",
+    detail: ""
+  },
+  "2026-02-23": {
+    title: "Obelix Village",
+    detail: ""
+  },
+  "2026-02-24": {
+    title: "Keraton's",
+    detail: "best experience at Keraton's with Wulan, Anggun, Pru, Samahita, Rasuna, Raki, Brian and Ben."
+  },
+  "2026-02-26": {
+    title: "I love you ❤️",
+    detail: "send her emails.<br>wow, our love story started here.<br>oh my God, I'm dating you.<br>holy fuck, can you believe how lucky I'm?"
+  },
+  "2026-02-28": {
+    title: "Bukber with GP",
+    detail: ""
+  },
+
+  // MARCH 2026
+  "2026-03-02": {
+    title: "First ride",
+    detail: "stealing my baby for lunch."
+  },
+  "2026-03-03": {
+    title: "Monthly meeting",
+    detail: ""
+  },
+  "2026-03-06": {
+    title: "Tax paying",
+    detail: ""
+  },
+  "2026-03-09": {
+    title: "Meet up with Mom",
+    detail: ""
+  },
+  "2026-03-12": {
+    title: "Meet with Dad",
+    detail: ""
+  },
+  "2026-03-14": {
+    title: "Golf",
+    detail: "bring your black glasses, don't want to see Mr. Budi."
+  },
+  "2026-03-15": {
+    title: "Grocery shopping",
+    detail: ""
+  },
+  "2026-03-16": {
+    title: "Meeting",
+    detail: ""
+  },
+  "2026-03-19": {
+    title: "HIKING",
+    detail: "lil escape with Flo at Pentland Hills."
+  },
+  "2026-03-20": {
+    title: "Back home",
+    detail: "don't forget to pinch Lucius's cheeks."
+  },
+  "2026-03-22": {
+    title: "Booking",
+    detail: "tell your Sydney's plan with WINGSPHERE."
+  },
+  "2026-03-25": {
+    title: "Flight to Aussie",
+    detail: ""
+  },
+  "2026-03-26": {
+    title: "Our day ❤️",
+    detail: "The Grounds Alexandria, Mrs Macquarie, dinner at yacht."
+  },
+  "2026-03-27": {
+    title: "JETSKI TIME!!!",
+    detail: ""
+  },
+  "2026-03-30": {
+    title: "Group work",
+    detail: ""
+  },
+
+  // APRIL 2026
+  "2026-04-03": {
+    title: "Study Case",
+    detail: "deadline before 23 April."
+  },
+  "2026-04-08": {
+    title: "Social Networking",
+    detail: "don't forget to eat your pils before meeting."
+  },
+  "2026-04-10": {
+    title: "Swimming",
+    detail: "meet with Noah."
+  },
+  "2026-04-13": {
+    title: "Pre-persentation",
+    detail: "don't forget your disk."
+  },
+  "2026-04-14": {
+    title: "Club House",
+    detail: "BASKET TIME!!!"
+  },
+  "2026-04-15": {
+    title: "Social Networking",
+    detail: "lunch after class."
+  },
+  "2026-04-16": {
+    title: "Study Case, Online Meeting",
+    detail: "meeting with them at Library then lunch around INSEAD.<br>at night with my Dad."
+  },
+  "2026-04-17": {
+    title: "Online Meeting",
+    detail: "again with my Dad."
+  },
+  "2026-04-18": {
+    title: "Karaoke",
+    detail: "at K. STAR."
+  },
+  "2026-04-19": {
+    title: "Mini hike",
+    detail: "at Singapore."
+  },
+  "2026-04-20": {
+    title: "SG date with my baby, Brian's day",
+    detail: "photo booth with my Sunny then wandering around SG.<br>Brian's party at CÈ LA VI."
+  },
+  "2026-04-22": {
+    title: "Moving",
+    detail: "I really hate this place."
+  },
+  "2026-04-23": {
+    title: "Do something!",
+    detail: "presentation.<br>go tell everything about what happened to her."
+  },
+  "2026-04-24": {
+    title: "Mami's gift",
+    detail: "tried Mang Cua for the first time."
+  },
+  "2026-04-25": {
+    title: "Days with Mr. Bowman",
+    detail: "wins Papi's heart."
+  },
+  "2026-04-26": {
+    title: "Our Day ❤️",
+    detail: ""
+  },
+  "2026-04-27": {
+    title: "Shan's gift",
+    detail: "Because Benedick deserves it."
+  },
+  "2026-04-28": {
+    title: "Club house",
+    detail: "don't forget bringing extra clothes."
+  },
+  "2026-04-30": {
+    title: "Presentation",
+    detail: "barbershop after!"
+  },
+
+  // MAY 2026
+  "2026-05-02": {
+    title: "Meets with Bowman's",
+    detail: "kidnap Kak Sashi's after pilates and meet Kak Savi at Gardens by the Bay. Took lunch together with Shanshan. I miss her so much."
+  },
+  "2026-05-05": {
+    title: "Presentation",
+    detail: "visit Benedick with Noah and Brian after class."
+  },
+  "2026-05-08": {
+    title: "Malibu",
+    detail: "Mini Vineyard tour in a WV with my baby."
+  },
+  "2026-05-09": {
+    title: "Sseraphina's",
+    detail: "Attending Casèy's concert with Shan."
+  },
+  "2026-05-11": {
+    title: "Meeting online",
+    detail: ""
+  },
+  "2026-05-14": {
+    title: "Cliff 125",
+    detail: ""
+  },
+  "2026-05-16": {
+    title: "Golf",
+    detail: ""
+  },
+  "2026-05-20": {
+    title: "INSEAD",
+    detail: ""
+  },
+  "2026-05-23": {
+    title: "Clay date?",
+    detail: "with Shan, along with Brian and Kak Sashi."
+  },
+  "2026-05-26": {
+    title: "Our day ❤️",
+    detail: "Bogor ride with Ashen and tried cake painting with my baby."
+  },
+  "2026-05-27": {
+    title: "Niku's date",
+    detail: ""
+  },
+
+  // JUNE 2026
+  "2026-06-01": {
+    title: "Meeting",
+    detail: "with my PA."
+  },
+  "2026-06-04": {
+    title: "meet my Sunny at SIN",
+    detail: ""
+  },
+  "2026-06-05": {
+    title: "Our 100th days at Venice ❤️",
+    detail: "moments at Caffe Florian, wandering around Doge's Palace after."
+  },
+  "2026-06-06": {
+    title: "101 days",
+    detail: "bought more Tiramisu at Tre Mercanti. Making perfume together at The Merchant of Venice, exploring la Biennale."
+  },
+  "2026-06-07": {
+    title: "102 days",
+    detail: "Liberia Acqua Alta, Gondola ride with my baby around Rialto Bridge, Suso Gelatoteca before leaving Venice."
+  },
+  "2026-06-13": {
+    title: "HIKING!",
+    detail: "Taking a picture if you meet Shiro at Mt. Salak."
+  },
+  "2026-06-16": {
+    title: "JETSKI!!!",
+    detail: "missing my baby so much."
+  },
+  "2026-06-18": {
+    title: "✈️🇮🇹",
+    detail: ""
+  },
+  "2026-06-20": {
+    title: "Como's",
+    detail: "Bagas and Olivia's"
+  },
+  "2026-06-24": {
+    title: "Boy's time",
+    detail: "billiard with Noah and Brian after class."
+  },
+  "2026-06-26": {
+    title: "Our day ❤️",
+    detail: ""
+  },
+
+  // JULY 2026
+  "2026-07-03": {
+    title: "Tell Mom about Shannika",
+    detail: "at Ritz."
+  },
+  "2026-07-04": {
+    title: "TSFW",
+    detail: "cheers to my friends, Anggun, Pru, and Samahita!"
+  },
+  "2026-07-05": {
+    title: "Movie date",
+    detail: "watching Toy Story 5 with Shan and Mom ❤️"
+  },
+  "2026-07-13": {
+    title: "HIKING!!!",
+    detail: "Mt. Kerinci with 505."
+  },
+  "2026-07-15": {
+    title: "Teaching Day",
+    detail: "I meet new friends: Tian, Deva, Putri, Sasa, Raka, and Kayla at Kelas Kancil, Rumah Mentari."
+  },
+  "2026-07-17": {
+    title: "Eon's",
+    detail: "London with Dad."
+  },
+  "2026-07-19": {
+    title: "Meet Mom",
+    detail: "LONDON CHOCOLATE!!!"
+  },
+  "2026-07-22": {
+    title: "Assignment",
+    detail: ""
+  },
+  "2026-07-26": {
+    title: "Bostan's",
+    detail: "horse riding at Bening's."
+  },
+  "2026-07-30": {
+    title: "Piano Class",
+    detail: ""
+  },
+
+  // AUGUST 2026
+  "2026-08-01": {
+    title: "Eclipse's",
+    detail: "with KCM at Senoparty!"
+  },
+  "2026-08-07": {
+    title: "Piano class",
+    detail: ""
+  },
+  "2026-08-09": {
+    title: "Confess your sin.",
+    detail: "sorry, I can't tell Mami because I still hopes this is still works for both of us."
+  },
+  "2026-08-24": {
+    title: "Ask her.",
+    detail: "maybe it'll works?"
+  },
+  "2026-08-26": {
+    title: "Ancol date??",
+    detail: "I still don't have much time to explore Jakarta, gladly I have Shannika.<br>Explore Dufan and SeaWorld with my baby. Notes: when you see photo booth around, coming. Don't forget to hold her hands when you both at Kereta Misteri."
+  },
+
+  // SEPTEMBER 2026
+  "2026-09-10": {
+    title: "Eon's",
+    detail: ""
+  },
+  "2026-09-19": {
+    title: "HIKING!",
+    detail: "Mt. Berbabu with Ben and Brian."
+  },
+  "2026-09-23": {
+    title: "Steamboat date?",
+    detail: "tried Indomie hack at HDL with my baby."
+  },
+  "2026-09-24": {
+    title: "Paris ❤️",
+    detail: "don't forget your ring!"
+  },
+  "2026-09-27": {
+    title: "The Weeknd",
+    detail: "wanna hear Sao Paulo live with Shan, along with Oliver, Malia, Sagara, Cesya, and Brian."
+  },
+
+  // OCTOBER 2026
+  "2026-10-02": {
+    title: "Meet Papi and Mami",
+    detail: "tell them everything about our plan."
+  },
+  "2026-10-03": {
+    title: "Family Time",
+    detail: "dinner with Bowmans and Tjokordas."
+  },
+  "2026-10-08": {
+    title: "Macao's",
+    detail: "wanna see Kevin Durant in person."
+  },
+  "2026-10-09": {
+    title: "Kak Sashi and Kak Savi birthdays",
+    detail: ""
+  },
+  "2026-10-10": {
+    title: "Ruel's",
+    detail: ""
+  },
+  "2026-10-15": {
+    title: "My Day",
+    detail: "bring cake and singing together with local police.<br>Halloween party at night with KCM."
+  },
+  "2026-10-24": {
+    title: "Pre-Wedding ❤️",
+    detail: "at Giverny."
+  },
+  "2026-10-29": {
+    title: "Shan's day",
+    detail: "my favorite person born today ❤️"
+  },
+
+  // NOVEMBER 2026
+  "2026-11-20": {
+    title: "Graduation",
+    detail: ""
+  },
+  "2026-11-26": {
+    title: "Our Day ❤️",
+    detail: ""
+  },
+
+  // DECEMBER 2026
+  "2026-12-05": {
+    title: "Proposal",
+    detail: "send it to them."
+  },
+  "2026-12-20": {
+    title: "Starting",
+    detail: ""
+  },
+  "2026-12-26": {
+    title: "Our Day ❤️",
+    detail: ""
+  },
+
+  // JANUARY 2027
+  "2027-01-08": {
+    title: "Our Day ❤️",
+    detail: ""
+  }
+};
 
 const monthTitle = document.getElementById('cal-month-title');
   const grid = document.getElementById('cal-grid');
