@@ -1826,8 +1826,10 @@ const monthTitle = document.getElementById('cal-month-title');
     .filter(Boolean);
 
   agendaList.innerHTML =
-    `<div class="cal-event">${event.title}</div>` +
-    details.map(item =>
+    `<div class="cal-event">
+      ${event.title}${details.length ? '<br>' + details[0] : ''}
+    </div>` +
+    details.slice(1).map(item =>
       `<div class="cal-event">${item}</div>`
     ).join('');
   }
