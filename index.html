@@ -658,15 +658,6 @@ margin: 0 !important;
   padding: 15px 12px 30px !important;
   box-sizing: border-box !important;
 }
-
-#view:has(#photo-gallery) .home-btn {
-  position: absolute !important;
-  bottom: 5px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 35 !important;
-  margin: 0 !important;
-}
   /* Music app: full-screen scrolling */
 #view:has(#spotify) {
   position: absolute !important;
@@ -722,6 +713,15 @@ margin: 0 !important;
 #view:has(#spotify) .app-title {
   color: #c9405e !important;
 }
+  #view:has(#photo-gallery) .appbar {
+padding: 15px 20px 12px !important;
+margin: 0 !important;
+gap: 12px !important;
+}
+#view:has(#photo-gallery) .appbar .back {
+margin-left: 4px !important;
+flex-shrink: 0;
+  }
 </style>
 </head>
 <body>
