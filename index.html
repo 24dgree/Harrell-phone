@@ -1098,32 +1098,39 @@ view.querySelectorAll('[data-chat]').forEach(b=>{
 });
 view.querySelectorAll('[data-note]').forEach(b=>b.addEventListener('click',()=>openNote(b.dataset.note)));
 view.querySelectorAll('[data-photo]').forEach(b=>b.addEventListener('click',()=>openPhoto(b.dataset.photo)));
+
 view.querySelectorAll('[data-gallery-album]').forEach(b=>{
-b.addEventListener('click',()=>{
-const album=b.dataset.galleryAlbum;
-const gallery=view.querySelector('#photo-gallery');
-if(!gallery)return;
-const photos=Array.from(gallery.querySelectorAll('img[data-photo]'));
-const selected=album==='Art'
-? photos.filter(img=>['sunflower','paris','venice'].includes(img.dataset.photo))
-: album==='Camera'
-? photos
-: album==='Screenshots'
-? photos.slice(3,6)
-: photos.slice(6,9);
-gallery.innerHTML=
-'<div style="display:flex;align-items:center;gap:18px;margin:0 4px 20px;padding-top:2px">'+
-  '<button id="gallery-back" style="border:0;background:none;color:#007aff;font-size:16px;padding:0 4px;white-space:nowrap">‹ Library</button>'+
-'<b style="font-size:22px">'+album+'</b></div>'+
-'<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px">'+
-selected.map(img=>'<img src="'+img.src+'" data-photo="'+(img.dataset.photo||'')+'" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">').join('')+
-'</div>';
-gallery.querySelector('#gallery-back').addEventListener('click',()=>openApp('photos'));
-gallery.querySelectorAll('[data-photo]').forEach(img=>{
-img.addEventListener('click',()=>openPhoto(img.dataset.photo));
+  b.addEventListener('click',()=>{
+    const album=b.dataset.galleryAlbum;
+    const gallery=view.querySelector('#photo-gallery');
+    if(!gallery)return;
+
+    const photos=Array.from(gallery.querySelectorAll('img'));
+    let selected=[];
+
+    if(album==='Art') selected=photos.slice(0,3);
+    else if(album==='Camera') selected=photos;
+    else if(album==='Screenshots') selected=photos.slice(3,6);
+    else if(album==='Hidden') selected=photos.slice(6,9);
+
+    gallery.innerHTML=
+      '<div style="padding:0 12px 20px">'+
+      '<button id="gallery-back" style="border:0;background:none;color:#007aff;font-size:16px;padding:8px 0 18px">‹ Library</button>'+
+      '<div style="font-size:25px;font-weight:750;margin-bottom:16px">'+album+'</div>'+
+      '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px">'+
+      selected.map((img,i)=>
+        '<img src="'+img.src+'" data-photo="'+(img.dataset.photo||'')+'" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">'
+      ).join('')+
+      '</div></div>';
+
+    gallery.querySelector('#gallery-back').addEventListener('click',()=>openApp('photos'));
+
+    gallery.querySelectorAll('img[data-photo]').forEach(img=>{
+      img.addEventListener('click',()=>openPhoto(img.dataset.photo));
+    });
+  });
 });
-});
-});
+  
   const play=view.querySelector('#play');
 if(play)play.addEventListener('click',()=>view.querySelector('#play-status').textContent='Demo only — add your own music link in the source.');
 
