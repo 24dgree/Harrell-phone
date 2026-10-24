@@ -1940,48 +1940,50 @@ const monthTitle = document.getElementById('cal-month-title');
   position: static;
   padding: 15px;
   flex: 1;
-  }/* Spotify full screen */
+  }
+  /* Spotify full-screen — Light Mode */
 #view:has(#spotify) {
   position: absolute !important;
-  top: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
+  inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
   padding: 0 !important;
   margin: 0 !important;
-  background: #121212 !important;
-  z-index: 10 !important;
-  overflow-y: auto !important;
-  box-sizing: border-box !important;
-  }
-
-#view:has(#spotify) .appview {
-position: absolute !important;
-top: 35px !important;
-bottom: 45px !important;
-left: 0 !important;
-right: 0 !important;
-width: auto !important;
-height: auto !important;
-min-height: 0 !important;
-margin: 0 !important;
-padding: 13px !important;
-box-sizing: border-box !important;
-overflow-y: auto !important;
-background: #121212 !important;
-color: white !important;
-border-radius: 0 !important;
-  }
-
-#view:has(#spotify) {
   background: #fff !important;
+  z-index: 30 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
 }
 
 #view:has(#spotify) .appview {
+  position: absolute !important;
+  top: 35px !important;
+  right: 0 !important;
+  bottom: 45px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 13px !important;
+  border-radius: 0 !important;
   background: #fff !important;
   color: #111 !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior-y: contain !important;
+  box-sizing: border-box !important;
+}
+
+#view:has(#spotify) #spotify {
+  width: 100% !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  padding: 14px 12px 30px !important;
+  background: #fff !important;
+  color: #111 !important;
+  box-sizing: border-box !important;
 }
 
 #view:has(#spotify) .appbar {
@@ -1992,7 +1994,16 @@ border-radius: 0 !important;
 #view:has(#spotify) .app-title,
 #view:has(#spotify) .back {
   color: #c9405e !important;
-  }
+}
+
+#view:has(#spotify) .home-btn {
+  position: absolute !important;
+  bottom: 5px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 35 !important;
+  margin: 0 !important;
+  } 
   .home-indicator { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 36px; height: 4px; background: white; border-radius: 4px; z-index: 5; } </style>
 <script>
 (function () {
