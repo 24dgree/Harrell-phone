@@ -920,7 +920,7 @@ screen.style.backgroundSize='cover';
 screen.style.backgroundPosition='center';view.innerHTML=`<div class="home-top"><span>Thursday, October 29</span><span>88%</span></div><h1 class="owner">Harrell Evan</h1><div class="grid">${[['💬','Messages','messages'],['🖼️','Photos','photos'],['📝','Notes','notes'],['☎️','Phone','phone'],['◎','Instagram','instagram'],['♫','Music','spotify'],['▦','Calendar','calendar'],['⚙️','Settings','settings'],['🌐','Safari','safari']].map(a=>`<button class="app" data-app="${a[2]}"><span class="icon">${a[0]}${a[2]==='instagram'?'<span class="app-badge">99+</span>':''}</span><span>${a[1]}</span></button>`).join('')}</div><div class="dock"><button data-app="phone">☎️</button><button data-app="messages">💬</button><button data-app="safari">🌐</button><button data-app="photos">🖼️</button></div><div class="home-indicator"></div>`;bindAppButtons(view)}
 function appShell(title,body,back='home'){
 if(indicator) indicator.classList.add('app-indicator');
-view.innerHTML=`<section class="appview"><div class="appbar"><button class="back" id="back" style="color:#007aff!important">‹</button>
+view.innerHTML=`<section class="appview"><div class="appbar"><button class="back" id="back" style="color:#007aff!important">‹</button><span class="app-title" style="color:#007aff!important">${title}</span></div><div>${body}</div></section>`;
 view.querySelector('#back').addEventListener('click',()=>back==='messages'?openApp('messages'):home());
 bindAppButtons(view);
 if (title === 'Calendar') initCalendar();
