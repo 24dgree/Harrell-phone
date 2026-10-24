@@ -763,7 +763,34 @@ messages: {
     </button>
   `
 },
-photos:{title:'Photos',body:`<div class="tiny" style="margin-bottom:12px">Library · 4,821 Photos</div><div class="photo-grid"><button class="photo" data-photo="sunflower">🌻<br>Shan's favourite</button><button class="photo" data-photo="paris">🥂<br>Paris</button><button class="photo" data-photo="venice">🌊<br>Venice</button><button class="photo" data-app="hidden">🔒<br>Hidden Album</button></div>`},
+  photos:{title:'Photos',body:`
+<div id="photo-gallery" style="font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif;color:#111;background:#fff;margin:-13px;padding:14px 12px 30px;min-height:100%;box-sizing:border-box">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+    <div>
+      <div style="font-size:28px;font-weight:750;letter-spacing:-.6px">Library</div>
+      <div style="font-size:13px;color:#888;margin-top:4px">4,821 Photos</div>
+    </div>
+    <div style="font-size:14px;color:#007aff">Select</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px">
+
+    <img src="URL_FOTO_1" data-photo="sunflower" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">
+    <img src="URL_FOTO_2" data-photo="paris" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">
+    <img src="URL_FOTO_3" data-photo="venice" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">
+    <img src="URL_FOTO_4" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">
+    <img src="URL_FOTO_5" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">
+    <img src="URL_FOTO_6" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">
+    <img src="URL_FOTO_7" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">
+    <img src="URL_FOTO_8" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">
+    <img src="URL_FOTO_9" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">
+
+  </div>
+
+  <div style="margin-top:24px;font-size:13px;color:#888;text-align:center">Recently Saved</div>
+
+</div>`},
 notes:{title:'Notes',body:`<button class="row" data-note="wedding"><span>📒</span><span><b>Wedding Plans</b><small>Things to arrange before December.</small></span></button><button class="row" data-note="shan"><span>💛</span><span><b>Things I Should Tell Shan</b><small>A few things I keep putting off.</small></span></button><button class="row" data-note="gift"><span>🎁</span><span><b>Her Birthday</b><small>Flowers, surprises, and everything she deserves.</small></span></button><button class="row" data-note="private"><span>🔒</span><span><b>Read When She's Not Looking</b><small>Definitely not for Shan to find.</small></span></button>`},
 phone:{title:'Recents',body:`<div class="row"><span class="avatar">💛</span><span><b>Shannika</b><small>Outgoing FaceTime · Yesterday</small></span></div><div class="row"><span class="avatar">B</span><span><b>Brian</b><small>Missed call · 08:42</small></span></div><div class="row"><span class="avatar">A</span><span><b>Adam</b><small>Outgoing call · Monday</small></span></div>`},
 instagram:{title:'Instagram',body:`
