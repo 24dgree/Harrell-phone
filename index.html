@@ -342,6 +342,22 @@ margin: 0 !important;
 overflow: hidden !important;
 box-sizing: border-box !important;
 }
+  /* Messages list: cover the full mockup screen */
+#view:has(button[data-chat]) {
+background: #f4f5f7 !important;
+z-index: 20 !important;
+}
+
+#view:has(button[data-chat]) .appview {
+background: #f4f5f7 !important;
+inset: 0 0 35px !important;
+padding-top: 35px !important;
+padding-bottom: 20px !important;
+}
+
+#view:has(button[data-chat]) ~ #indicator {
+background: #f4f5f7 !important;
+}
 
 #view:has(button[data-chat]) .appview {
 position: absolute !important;
