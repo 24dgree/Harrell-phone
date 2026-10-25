@@ -726,13 +726,20 @@ margin: 0 !important;
   margin: 0 !important;
   }
   #view:has(#photo-gallery) .appbar {
-padding: 15px 20px 12px !important;
-margin: 0 !important;
-gap: 12px !important;
+  padding: 15px 20px 12px !important;
+  margin: 0 !important;
+  gap: 8px !important;
 }
-#view:has(#photo-gallery) .appbar .back {
-margin-left: 4px !important;
-flex-shrink: 0;
+/* Samakan posisi tombol Back di semua aplikasi */
+.appbar .back {
+  margin-left: 0 !important;
+  padding-left: 6px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Samakan jarak tombol Back dan judul aplikasi */
+.appbar {
+  gap: 8px !important;
   }
 </style>
 </head>
