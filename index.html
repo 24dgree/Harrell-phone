@@ -1102,36 +1102,61 @@ view.querySelectorAll('[data-chat]').forEach(b=>{
 });
 view.querySelectorAll('[data-note]').forEach(b=>b.addEventListener('click',()=>openNote(b.dataset.note)));
 view.querySelectorAll('[data-photo]').forEach(b=>b.addEventListener('click',()=>openPhoto(b.dataset.photo)));
-view.querySelectorAll('[data-album]').forEach(b=>{
-  
+
+  view.querySelectorAll('[data-album]').forEach(b=>{
   b.addEventListener('click',()=>{
-    const album=b.dataset.galleryAlbum;
+    const album=b.dataset.album;
     const gallery=view.querySelector('#photo-gallery');
     if(!gallery)return;
 
-    const photos=Array.from(gallery.querySelectorAll('img'));
-    let selected=[];
+    const photoURLs={
+      Camera:[
+        'URL_CAMERA_1',
+        'URL_CAMERA_2',
+        'URL_CAMERA_3',
+        'URL_CAMERA_4',
+        'URL_CAMERA_5',
+        'URL_CAMERA_6'
+      ],
+      Art:[
+        'URL_ART_1',
+        'URL_ART_2',
+        'URL_ART_3',
+        'URL_ART_4',
+        'URL_ART_5',
+        'URL_ART_6'
+      ],
+      Screenshots:[
+        'URL_SCREENSHOT_1',
+        'URL_SCREENSHOT_2',
+        'URL_SCREENSHOT_3',
+        'URL_SCREENSHOT_4',
+        'URL_SCREENSHOT_5',
+        'URL_SCREENSHOT_6'
+      ],
+      Hidden:[
+        'URL_HIDDEN_1',
+        'URL_HIDDEN_2',
+        'URL_HIDDEN_3',
+        'URL_HIDDEN_4',
+        'URL_HIDDEN_5',
+        'URL_HIDDEN_6'
+      ]
+    };
 
-    if(album==='Art') selected=photos.slice(0,3);
-    else if(album==='Camera') selected=photos;
-    else if(album==='Screenshots') selected=photos.slice(3,6);
-    else if(album==='Hidden') selected=photos.slice(6,9);
+    const photos=photoURLs[album]||[];
 
     gallery.innerHTML=
       '<div style="padding:0 12px 20px">'+
       '<button id="gallery-back" style="border:0;background:none;color:#007aff;font-size:16px;padding:8px 0 18px">‹ Library</button>'+
       '<div style="font-size:25px;font-weight:750;margin-bottom:16px">'+album+'</div>'+
       '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px">'+
-      selected.map((img,i)=>
-        '<img src="'+img.src+'" data-photo="'+(img.dataset.photo||'')+'" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">'
+      photos.map((url,i)=>
+        '<img src="'+url+'" alt="'+album+' '+(i+1)+'" data-photo-url="'+url+'" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">'
       ).join('')+
       '</div></div>';
 
     gallery.querySelector('#gallery-back').addEventListener('click',()=>openApp('photos'));
-
-    gallery.querySelectorAll('img[data-photo]').forEach(img=>{
-      img.addEventListener('click',()=>openPhoto(img.dataset.photo));
-    });
   });
 });
   
