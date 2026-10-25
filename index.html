@@ -1053,6 +1053,15 @@ box-sizing: border-box !important;
   box-sizing: border-box !important;
   background: #f4f5f7 !important;
 }
+  .screen:not(:has(.lock)) .status-icons {
+  display: inline-flex !important;
+  gap: 10px !important;
+}
+
+.screen:not(:has(.lock)) .status-icons svg {
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
 </style>
 </head>
 <body>
