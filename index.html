@@ -1102,8 +1102,8 @@ view.querySelectorAll('[data-chat]').forEach(b=>{
 });
 view.querySelectorAll('[data-note]').forEach(b=>b.addEventListener('click',()=>openNote(b.dataset.note)));
 view.querySelectorAll('[data-photo]').forEach(b=>b.addEventListener('click',()=>openPhoto(b.dataset.photo)));
-
-view.querySelectorAll('[data-gallery-album]').forEach(b=>{
+view.querySelectorAll('[data-album]').forEach(b=>{
+  
   b.addEventListener('click',()=>{
     const album=b.dataset.galleryAlbum;
     const gallery=view.querySelector('#photo-gallery');
