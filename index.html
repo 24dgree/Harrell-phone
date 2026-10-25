@@ -842,34 +842,188 @@ box-sizing: border-box !important;
   box-sizing: border-box !important;
   background: #f4f5f7 !important;
 }
-  /* SETTINGS FULL SCREEN */
+/* SETTINGS FULL SCREEN */
 #view:has(#settings-screen) {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  overflow: hidden !important;
-  background: #fff !important;
-  z-index: 20 !important;
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  padding:0!important;
+  margin:0!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  z-index:20!important;
 }
 
 #view:has(#settings-screen) .appview {
-  position: absolute !important;
-  inset: 0 0 35px !important;
-  width: 100% !important;
-  height: auto !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 35px 15px 25px !important;
-  border-radius: 0 !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  -webkit-overflow-scrolling: touch !important;
-  box-sizing: border-box !important;
-  background: #fff !important;
+  position:absolute!important;
+  inset:0 0 35px!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:35px 15px 25px!important;
+  border-radius:0!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  box-sizing:border-box!important;
+  background:#fff!important;
 }
+
+#settings-screen {
+  color:#111;
+  font-family:Arial,sans-serif;
+  padding-bottom:20px;
+}
+
+.settings-profile {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:16px;
+  margin-bottom:26px;
+  border-radius:20px;
+  background:#f7f7f7;
+}
+
+.settings-avatar {
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+.settings-profile-text {
+  min-width:0;
+  flex:1;
+}
+
+.settings-profile-text b {
+  display:block;
+  font-size:17px;
+}
+
+.settings-profile-text small {
+  display:block;
+  color:#777;
+  font-size:13px;
+  line-height:1.4;
+  margin-top:5px;
+}
+
+.settings-group {
+  background:#f7f7f7;
+  border-radius:18px;
+  padding:0 12px;
+  margin-bottom:24px;
+  overflow:hidden;
+}
+
+.settings-row {
+  display:flex;
+  align-items:center;
+  min-height:63px;
+  gap:12px;
+  position:relative;
+  box-sizing:border-box;
+}
+
+.settings-row:not(:last-child)::after {
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:52px;
+  right:0;
+  height:1px;
+  background:#dedede;
+}
+
+.settings-icon {
+  width:34px;
+  height:34px;
+  flex-shrink:0;
+  border-radius:9px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.airplane {background:#ff9500}
+.wifi {background:#087cff}
+.mobile {background:#30c759}
+.bluetooth {background:#087cff}
+.notifications {background:#ff3b30}
+.sounds {background:#ff2d55}
+.focus {background:#5856d6}
+.screentime {background:#6254d9}
+.display {background:#087cff}
+.homescreen {background:#3478f6}
+.battery {background:#30c759}
+.faceid {background:#087cff}
+.privacy {background:#087cff}
+.general {background:#8e8e93}
+.storage {background:#8e8e93}
+
+.settings-label {
+  flex:1;
+  min-width:0;
+  font-size:15px;
+}
+
+.settings-value {
+  color:#85858b;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+.settings-chevron {
+  color:#a5a5ad;
+  font-size:25px;
+  font-weight:300;
+  line-height:1;
+  border:0;
+  background:transparent;
+  padding:0 3px;
+}
+
+.settings-action {
+  cursor:pointer;
+  min-width:24px;
+}
+
+.settings-toggle {
+  width:48px;
+  height:29px;
+  border:0;
+  border-radius:20px;
+  padding:3px;
+  background:#dedede;
+  cursor:pointer;
+  flex-shrink:0;
+  transition:background .2s;
+}
+
+.settings-toggle span {
+  display:block;
+  width:23px;
+  height:23px;
+  background:#fff;
+  border-radius:50%;
+  box-shadow:0 1px 3px #0002;
+  transition:transform .2s;
+}
+
+.settings-toggle[aria-pressed="true"] {
+  background:#34c759;
+}
+
+.settings-toggle[aria-pressed="true"] span {
+  transform:translateX(19px);
+  }
   
 /* SAFARI FULL SCREEN */
 #view:has(#safari-screen) {
