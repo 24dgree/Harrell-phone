@@ -1248,7 +1248,66 @@ calendar:{title:'Calendar',body:`
 </div>
 `},
   
-settings:{title:'Settings',body:`<div id="settings-screen"><h1 style="font-size:32px;margin:10px 0 20px">Settings</h1><div style="display:flex;align-items:center;gap:14px;padding:15px;background:#fff;border-radius:16px;margin-bottom:20px"><img src="Harrell%20Evan.jpg" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0"><div><b style="font-size:17px">Harrell Evan</b><small style="display:block;color:#777;margin-top:5px">Apple ID, iCloud, Media & Purchases</small></div><span style="margin-left:auto;color:#aaa;font-size:24px">›</span></div><div class="row">✈️ &nbsp; Airplane Mode <span style="margin-left:auto">○</span></div><div class="row">📶 &nbsp; Wi-Fi <span style="margin-left:auto;color:#888">Connected　›</span></div><div class="row">📡 &nbsp; Mobile Service　›</div><div class="row">🔵 &nbsp; Bluetooth <span style="margin-left:auto;color:#888">On　›</span></div><div class="row">🔔 &nbsp; Notifications　›</div><div class="row">🔊 &nbsp; Sounds & Haptics　›</div><div class="row">🌙 &nbsp; Focus　›</div><div class="row">🖥️ &nbsp; Display & Brightness　›</div><div class="row">🏠 &nbsp; Home Screen　›</div><div class="row">🔋 &nbsp; Battery <span style="margin-left:auto;color:#888">88%　›</span></div><div class="row">🔒 &nbsp; Face ID & Passcode　›</div><div class="row">🛡️ &nbsp; Privacy & Security　›</div><div class="row">⚙️ &nbsp; General　›</div><div class="row">📦 &nbsp; Storage　›</div></div>`},
+  settings:{title:'Settings',body:`<div id="settings-screen">
+<h1 style="font-size:32px;margin:10px 0 20px">Settings</h1>
+
+<div class="settings-profile">
+<img src="Harrell%20Evan.jpg" alt="" class="settings-avatar">
+<div class="settings-profile-text">
+<b>Harrell Evan</b>
+<small>Apple ID, iCloud, Media & Purchases</small>
+</div>
+<span class="settings-chevron">›</span>
+</div>
+
+<div class="settings-group">
+<div class="settings-row">
+<span class="settings-icon airplane">✈</span>
+<span class="settings-label">Airplane Mode</span>
+<button class="settings-toggle" data-toggle="airplane" aria-label="Airplane Mode" aria-pressed="false"><span></span></button>
+</div>
+<div class="settings-row">
+<span class="settings-icon wifi">⌁</span>
+<span class="settings-label">Wi-Fi</span>
+<span class="settings-value" id="wifi-status">Connected</span>
+<button class="settings-chevron settings-action" data-toggle="wifi" aria-label="Toggle Wi-Fi">›</button>
+</div>
+<div class="settings-row">
+<span class="settings-icon mobile">⌁</span>
+<span class="settings-label">Mobile Service</span>
+<span class="settings-chevron">›</span>
+</div>
+<div class="settings-row">
+<span class="settings-icon bluetooth">ᛒ</span>
+<span class="settings-label">Bluetooth</span>
+<span class="settings-value" id="bluetooth-status">On</span>
+<button class="settings-chevron settings-action" data-toggle="bluetooth" aria-label="Toggle Bluetooth">›</button>
+</div>
+</div>
+
+<div class="settings-group">
+<div class="settings-row"><span class="settings-icon notifications">♟</span><span class="settings-label">Notifications</span><span class="settings-chevron">›</span></div>
+<div class="settings-row"><span class="settings-icon sounds">◖</span><span class="settings-label">Sounds & Haptics</span><span class="settings-chevron">›</span></div>
+<div class="settings-row"><span class="settings-icon focus">☾</span><span class="settings-label">Focus</span><span class="settings-chevron">›</span></div>
+<div class="settings-row"><span class="settings-icon screentime">⌛</span><span class="settings-label">Screen Time</span><span class="settings-chevron">›</span></div>
+</div>
+
+<div class="settings-group">
+<div class="settings-row"><span class="settings-icon display">☼</span><span class="settings-label">Display & Brightness</span><span class="settings-chevron">›</span></div>
+<div class="settings-row"><span class="settings-icon homescreen">▦</span><span class="settings-label">Home Screen</span><span class="settings-chevron">›</span></div>
+<div class="settings-row"><span class="settings-icon battery">▰</span><span class="settings-label">Battery</span><span class="settings-value">88%</span><span class="settings-chevron">›</span></div>
+<div class="settings-row"><span class="settings-icon faceid">▣</span><span class="settings-label">Face ID & Passcode</span><span class="settings-chevron">›</span></div>
+</div>
+
+<div class="settings-group">
+<div class="settings-row"><span class="settings-icon privacy">✋</span><span class="settings-label">Privacy & Security</span><span class="settings-chevron">›</span></div>
+</div>
+
+<div class="settings-group">
+<div class="settings-row"><span class="settings-icon general">⚙</span><span class="settings-label">General</span><span class="settings-chevron">›</span></div>
+<div class="settings-row"><span class="settings-icon storage">▰</span><span class="settings-label">Storage</span><span class="settings-chevron">›</span></div>
+</div>
+</div>`},
   
   safari:{title:'Safari',body:`<div id="safari-screen"><div class="note" style="background:#e5eaf0">🔍 &nbsp; Search the web</div><b>Recently visited</b><div class="row">Wedding venues in Bali</div><div class="row">Paris weather September</div><div class="row">How to keep flowers fresh</div></div>`},
 
