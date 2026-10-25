@@ -814,6 +814,34 @@ box-sizing: border-box !important;
 .appbar {
   gap: 8px !important;
   }
+  /* PHONE FULL SCREEN */
+#view:has(#phone-screen) {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  background: #f4f5f7 !important;
+  z-index: 20 !important;
+}
+
+#view:has(#phone-screen) .appview {
+  position: absolute !important;
+  inset: 0 0 35px !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 35px 15px 20px !important;
+  border-radius: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  box-sizing: border-box !important;
+  background: #f4f5f7 !important;
+}
 </style>
 </head>
 <body>
