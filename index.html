@@ -353,6 +353,16 @@ overflow: visible !important;
 flex-shrink: 0 !important;
 }
 
+#view:has(#spotify) .back::before {
+content: "‹";
+display: inline-block;
+font-size: 32px;
+font-weight: 300;
+line-height: 1;
+margin-right: 5px;
+vertical-align: -2px;
+}
+
 #view:has(#spotify) .back::after {
 content: none !important;
 }
