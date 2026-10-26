@@ -1222,6 +1222,20 @@ transform: none !important;
   display: none !important;
 }
   
+  /* Music: tampilkan tulisan Library di tombol back */
+#view:has(#spotify) .back {
+width: auto !important;
+min-width: 0 !important;
+overflow: visible !important;
+text-indent: 0 !important;
+font-size: 17px !important;
+color: #007aff !important;
+}
+
+#view:has(#spotify) .back::after {
+content: none !important;
+}
+  
 </style>
 </head>
 <body>
