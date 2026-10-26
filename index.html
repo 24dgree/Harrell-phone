@@ -1159,32 +1159,37 @@ box-sizing: border-box !important;
 
 /* Badge */
 .app-badge {
-  position: absolute;
-  top: -7px;
-  right: -10px;
-  min-width: 23px;
-  height: 18px;
-  padding: 0 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  background: #ff3b30;
-  color: white;
-  font-size: 
-  
-    .dock button[data-app="phone"] {
+position: absolute;
+top: -7px;
+right: -10px;
+min-width: 23px;
+height: 18px;
+padding: 0 4px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 999px;
+background: #ff3b30;
+color: white;
+font-size: 12px;
+font-weight: 700;
+line-height: 1;
+box-sizing: border-box;
+z-index: 10;
+}
+
+/* Badge Phone di dock */
+.dock button[data-app="phone"] {
 position: relative;
 }
 
 .dock button[data-app="phone"] .app-badge {
-position: absolute !important;
 top: -8px !important;
 right: -5px !important;
 left: auto !important;
 transform: none !important;
-z-index: 10;
 }
+
 </style>
 </head>
 <body>
