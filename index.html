@@ -1696,8 +1696,10 @@ function appShell(title,body,back='home'){
   view.innerHTML=`
     <section class="appview">
       <div class="appbar">
-        <button class="back" id="back">‹ Back</button>
-        <span class="app-title">${title}</span>
+      
+        <button class="back" id="back">${title === 'Music' ? '‹ Library' : '‹ Back'}</button>
+<span class="app-title">${title === 'Music' ? '' : title}</span>
+        
       </div>
       <div>${body}</div>
     </section>
