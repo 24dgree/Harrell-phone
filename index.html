@@ -1614,9 +1614,13 @@ ${[
 ].map(a=>`
   <button class="app" data-app="${a[2]}">
     <span class="icon">
+    
       ${a[0]}${a[2]==='instagram'
-        ? '<span class="app-badge">99+</span>'
-        : ''}
+  ? '<span class="app-badge">99+</span>'
+  : a[2]==='phone'
+    ? '<span class="app-badge">25</span>'
+    : ''}
+        
     </span>
     <span>${a[1]}</span>
   </button>
