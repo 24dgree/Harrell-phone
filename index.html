@@ -333,14 +333,30 @@ font-size: 36px !important;
 font-weight: 400 !important;
 }
 
-#view:has(#ig) .appbar {
-border-bottom-color: #262626 !important;
+#view:has(#spotify) .appbar {
+background: #fff !important;
+color: #111 !important;
+gap: 8px !important;
 }
-#view:has(#ig) .appbar .app-title {
-font-size: 20px !important;
+
+#view:has(#spotify) .back {
+color: #007aff !important;
+font-size: 17px !important;
 font-weight: 600 !important;
-line-height: normal !important;
+line-height: 1.2 !important;
+padding: 4px 0 !important;
+margin: 0 !important;
+width: auto !important;
+min-width: 0 !important;
+text-indent: 0 !important;
+overflow: visible !important;
+flex-shrink: 0 !important;
 }
+
+#view:has(#spotify) .back::after {
+content: none !important;
+}
+  
 /* Messages: full-screen background */
 #view:has(.bubble) {
   position: absolute !important;
