@@ -1585,78 +1585,56 @@ calendar:{title:'Calendar',body:`
 
   hidden:{title:'Hidden Album',body:`<div class="photo-grid"><button class="photo" data-photo="sleep" style="min-height:190px">💛<br>Shan asleep on my shoulder</button><button class="photo" data-photo="sunflower" style="min-height:190px">🌻<br>The first sunflower</button></div><p class="tiny" style="margin-top:12px">Some things are better kept to myself.</p>`}
 };
-function home(){
+  function home(){
 if (indicator) indicator.classList.remove('app-indicator');
+
 screen.style.backgroundImage="linear-gradient(#0003,#0003),url('5_20261017_175045_0000.png')";
-screen.style.backgroundPosition = 'center';
+screen.style.backgroundSize='cover';
+screen.style.backgroundPosition='center';
 
-const apps = [
-  ['💬', 'Messages', 'messages'],
-  ['🌈', 'Photos', 'photos'],
-  ['✏️', 'Notes', 'notes'],
-  ['☎', 'Phone', 'phone'],
-  ['◎', 'Instagram', 'instagram'],
-  ['♫', 'Music', 'spotify'],
-  ['', 'Calendar', 'calendar'],
-  ['⚙', 'Settings', 'settings'],
-  ['◉', 'Safari', 'safari']
-];
+view.innerHTML=`
+<div class="home-top">
+  <span>Thursday, October 29</span>
+  <span>88%</span>
+</div>
 
-view.innerHTML = `
-  <div class="home-top">
-    <span>Thursday, October 29</span>
-    <span>88%</span>
-  </div>
+<h1 class="owner">Harrell Evan</h1>
 
-  <h1 class="owner">Harrell Evan</h1>
+<div class="grid">
+${[
+  ['💬','Messages','messages'],
+  ['🖼️','Photos','photos'],
+  ['📝','Notes','notes'],
+  ['☎️','Phone','phone'],
+  ['◎','Instagram','instagram'],
+  ['♫','Music','spotify'],
+  ['▦','Calendar','calendar'],
+  ['⚙️','Settings','settings'],
+  ['🌐','Safari','safari']
+].map(a=>`
+  <button class="app" data-app="${a[2]}">
+    <span class="icon">
+      ${a[0]}${a[2]==='instagram'
+        ? '<span class="app-badge">99+</span>'
+        : ''}
+    </span>
+    <span>${a[1]}</span>
+  </button>
+`).join('')}
+</div>
 
-  <div class="grid">
-    ${apps.map(a => `
-      <button class="app" data-app="${a[2]}">
-        <span class="icon icon-${a[2]}">
-          ${
-            a[2] === 'calendar'
-              ? '<span class="calendar-head">THU</span><span class="calendar-date">29</span>'
-              : a[0]
-          }
+<div class="dock">
+  <button data-app="phone">☎️</button>
+  <button data-app="messages">💬</button>
+  <button data-app="safari">🌐</button>
+  <button data-app="photos">🖼️</button>
+</div>
 
-          ${
-            a[2] === 'phone'
-              ? '<span class="app-badge">25</span>'
-              : a[2] === 'instagram'
-                ? '<span class="app-badge">99+</span>'
-                : ''
-          }
-        </span>
-
-        <span>${a[1]}</span>
-      </button>
-    `).join('')}
-  </div>
-
-  <div class="dock">
-    <button data-app="phone">
-      <span class="icon icon-phone">☎</span>
-    </button>
-
-    <button data-app="messages">
-      <span class="icon icon-messages">💬</span>
-    </button>
-
-    <button data-app="safari">
-      <span class="icon icon-safari">◉</span>
-    </button>
-
-    <button data-app="photos">
-      <span class="icon icon-photos">🌈</span>
-    </button>
-  </div>
-
-  <div class="home-indicator"></div>
+<div class="home-indicator"></div>
 `;
 
 bindAppButtons(view);
-}
+  }
 if (title === 'Calendar') initCalendar();
 view.querySelectorAll('[data-chat]').forEach(b=>{
   b.onclick = function(){
