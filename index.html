@@ -1997,8 +1997,29 @@ requestAnimationFrame(function() {
   }
 });
   }
-const noteData={wedding:['Wedding Plans','December. London. Keep it intimate. Ask Dad about the church. Confirm the flowers.'],shan:['Things I Should Tell Shan','I don’t always know how to say what I mean. That doesn’t mean I feel any less. She deserves to hear it from me, not find it in a note.'],gift:['Her Birthday','Flowers. Something thoughtful. No last-minute decisions. Remember what she said about yellow.'],private:['Read When She’s Not Looking','Sometimes I still think about how close we came to losing each other. I don’t want us to become two people who know everything about each other except how to stay.']};
+  
+const noteData = {
+  wedding: [
+    'Wedding Plans',
+    'December. London. Keep it intimate. Ask Dad about the church. Confirm the flowers.'
+  ],
 
+  shan: [
+    'Things I Should Tell Shan',
+    'I don’t always know how to say what I mean. That doesn’t mean I feel any less. She deserves to hear it from me, not find it in a note.'
+  ],
+
+  gift: [
+    'Her Birthday',
+    'Flowers. Something thoughtful. No last-minute decisions. Remember what she said about yellow.'
+  ],
+
+  private: [
+    'Read When She’s Not Looking',
+    'Sometimes I still think about how close we came to losing each other. I don’t want us to become two people who know everything about each other except how to stay.'
+  ]
+};
+  
   function openNote(id){
   const n=noteData[id];
   appShell('Notes',`<article class="note"><h3 style="font-size:19px;margin:0 0 12px">${n[0]}</h3>${n[1]}</article>`,'notes');
