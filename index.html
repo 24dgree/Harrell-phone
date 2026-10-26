@@ -354,11 +354,19 @@ flex-shrink: 0 !important;
 }
 
 #view:has(#spotify) .back::before {
-  content: none !important;
+content: "‹" !important;
+display: inline-block !important;
+font-family: Arial, sans-serif !important;
+font-size: 36px !important;
+font-weight: 700 !important;
+line-height: 1 !important;
+margin-right: 8px !important;
+vertical-align: -3px !important;
 }
 
 #view:has(#spotify) .back::after {
-  content: none !important;
+content: none !important;
+
 }
   
 /* Messages: full-screen background */
