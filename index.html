@@ -1963,6 +1963,85 @@ ${[
 
 bindAppButtons(view);
 }
+  function showPasscode() {
+  let entered = '';
+
+  view.innerHTML = `
+    <div class="passcode-screen">
+      <div style="font-size:38px">🔒</div>
+
+      <h2>Enter Passcode</h2>
+
+      <p>Enter your passcode to unlock iPhone</p>
+
+      <div class="passcode-dots">
+        ${Array.from({length:6}, () =>
+          '<span class="passcode-dot"></span>'
+        ).join('')}
+      </div>
+
+      <div class="passcode-error"></div>
+
+      <div class="passcode-keypad">
+        ${[1,2,3,4,5,6,7,8,9].map(n =>
+          `<button data-digit="${n}">${n}</button>`
+        ).join('')}
+
+        <button class="passcode-empty"></button>
+        <button data-digit="0">0</button>
+        <button class="passcode-delete" data-delete>Delete</button>
+      </div>
+
+      <button class="passcode-cancel" id="passcode-cancel">
+        Cancel
+      </button>
+    </div>
+  `;
+
+  const dots = view.querySelectorAll('.passcode-dot');
+  const error = view.querySelector('.passcode-error');
+
+  function updateDots() {
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('filled', i < entered.length);
+    });
+  }
+
+  function checkPasscode() {
+    if (entered === '260626') {
+      home();
+      return;
+    }
+
+    error.textContent = 'Incorrect Passcode';
+    entered = '';
+    updateDots();
+  }
+
+  view.querySelectorAll('[data-digit]').forEach(button => {
+    button.addEventListener('click', () => {
+      if (entered.length >= 6) return;
+
+      entered += button.dataset.digit;
+      error.textContent = '';
+      updateDots();
+
+      if (entered.length === 6) {
+        setTimeout(checkPasscode, 180);
+      }
+    });
+  });
+
+  view.querySelector('[data-delete]').addEventListener('click', () => {
+    entered = entered.slice(0, -1);
+    error.textContent = '';
+    updateDots();
+  });
+
+  view.querySelector('#passcode-cancel').addEventListener('click', () => {
+    location.reload();
+  });
+  }
 
 function appShell(title,body,back='home'){
   
