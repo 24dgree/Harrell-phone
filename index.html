@@ -2235,8 +2235,9 @@ view.querySelectorAll('[data-photo]').forEach(b=>b.addEventListener('click',()=>
   view.querySelectorAll('[data-album]').forEach(b=>{
   b.addEventListener('click',()=>{
     const album=b.dataset.album;
-    const gallery=view.querySelector('#photo-gallery');
-    if(!gallery)return;
+const gallery=view.querySelector('#photo-gallery');
+if(!gallery)return;
+gallery.classList.add('album-open');
 
     const photoURLs={
       Camera:[
