@@ -1465,6 +1465,10 @@ content: none !important;
   background: #007aff;
   margin: 0 -4px 0 0;
   }
+/* Hide Photos back button only inside an opened album */
+#view:has(#photo-gallery.album-open) .appbar .back {
+  display: none !important;
+}
 
 </style>
 </head>
