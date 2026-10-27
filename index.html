@@ -2301,7 +2301,9 @@ view.querySelectorAll('[data-photo]').forEach(b=>b.addEventListener('click',()=>
 
     gallery.innerHTML=
       '<div style="padding:0 12px 20px">'+
-      '<button id="gallery-back" style="border:0;background:none;color:#007aff;font-size:16px;padding:8px 0 18px">‹ Library</button>'+
+      
+      '<button id="gallery-back" style="display:inline-flex;align-items:center;gap:6px;border:0;background:none;color:#007aff;font-size:16px;font-weight:400;padding:8px 0 18px"><span style="font-size:22px;line-height:1">‹</span><span>Library</span></button>'+
+      
       '<div style="font-size:25px;font-weight:750;margin-bottom:16px">'+album+'</div>'+
       '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px">'+
       photos.map((url,i)=>
